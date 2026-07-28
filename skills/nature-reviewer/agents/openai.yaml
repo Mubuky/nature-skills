@@ -1,0 +1,7 @@
+# MODIFIED IN THIS DERIVATIVE: generated UI metadata; see ../../../NOTICE (Apache-2.0 section 4(b)).
+interface:
+  display_name: "Nature Reviewer"
+  short_description: "Simulate a rigorous pre-submission peer review"
+  default_prompt: "Use $nature-reviewer to simulate a rigorous pre-submission peer review of this manuscript."
+policy:
+  allow_implicit_invocation: true

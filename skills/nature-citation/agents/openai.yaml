@@ -1,0 +1,7 @@
+# MODIFIED IN THIS DERIVATIVE: generated UI metadata; see ../../../NOTICE (Apache-2.0 section 4(b)).
+interface:
+  display_name: "Nature Citation Support"
+  short_description: "Match manuscript claims to verified citations"
+  default_prompt: "Use $nature-citation to discover candidate literature, verify claim-level support, and export only the screened references."
+policy:
+  allow_implicit_invocation: true

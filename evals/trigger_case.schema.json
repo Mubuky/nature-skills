@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Mubuky/nature-skills/evals/trigger_case.schema.json",
+  "$comment": "New for the context-engineered edition; see ../NOTICE.",
+  "title": "Nature Skills static routing-coverage case",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "kind", "prompt", "expected"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "skill": {
+      "type": "string",
+      "pattern": "^nature-[a-z0-9-]+$"
+    },
+    "kind": {
+      "enum": [
+        "direct",
+        "indirect",
+        "incomplete",
+        "negative",
+        "implicit-en",
+        "suite-negative",
+        "multi-skill"
+      ]
+    },
+    "prompt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expected": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^nature-[a-z0-9-]+$"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "suite-negative"
+          }
+        },
+        "required": ["kind"]
+      },
+      "then": {
+        "not": {
+          "required": ["skill"]
+        },
+        "properties": {
+          "expected": {
+            "maxItems": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "multi-skill"
+          }
+        },
+        "required": ["kind"]
+      },
+      "then": {
+        "not": {
+          "required": ["skill"]
+        },
+        "properties": {
+          "expected": {
+            "minItems": 2
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "enum": [
+              "direct",
+              "indirect",
+              "incomplete",
+              "negative",
+              "implicit-en"
+            ]
+          }
+        },
+        "required": ["kind"]
+      },
+      "then": {
+        "required": ["skill"],
+        "properties": {
+          "expected": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
+}

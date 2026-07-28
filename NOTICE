@@ -1,0 +1,68 @@
+Nature Skills — context-engineered edition
+Source, modification, and attribution notice
+
+ADOPTED SOURCE SNAPSHOT
+
+  Project: nature-skills
+  Repository: https://github.com/Yuan1z0825/nature-skills
+  Adopted revision: fac88c419fa0ad642014609e3084f52629cfee52
+
+This repository is an independently maintained derivative created with a new
+Git history; it is not a GitHub fork. The adopted snapshot included an Apache
+License 2.0 file at its root. The exact text retained by this distribution is in
+LICENSE. This notice records provenance and does not expand, narrow, or infer
+the scope of a licence beyond the corresponding licence text.
+
+MATERIAL MODIFICATIONS
+
+Modified files carry a short notice where their format permits one. Major
+changes include lean task routers, normalized Agent Skills metadata,
+progressive-disclosure routing, static routing-coverage cases, context and
+metadata validation, safer installation support, and a unified CI workflow.
+
+KNOWN COMPONENT-LEVEL NOTICES
+
+- skills/nature-downloader/LICENSE contains an MIT notice naming baihe26
+  (2026). Consult that file for its exact text and stated scope.
+- skills/nature-paper-to-patent/references/disclosure/
+  patent-disclosure-skill-MIT-LICENSE.txt contains an MIT notice naming
+  handsomestWei (2026). Consult that file for its exact text and stated scope.
+- skills/nature-figure/scripts/validate_figure.py states that its rule structure
+  incorporates and refactors ideas from an Apache-2.0
+  `academic-figure-skill` workflow. The retained source does not establish a
+  repository URL or revision for that reference, so none is asserted here.
+- Metadata in the adopted source snapshot named 十五 (JL Lab) as author and
+  stated `MIT` for `nature-experiment-log` and `nature-literature-pipeline`.
+  The current tree contains no component-level licence file establishing the
+  scope of those metadata statements, so this notice preserves the statements
+  without inferring copyright ownership or licence scope.
+- Metadata in the adopted source snapshot stated `MIT` for
+  `nature-proposal-writer`. The current tree contains no component-level licence
+  file establishing the scope of that statement; no additional attribution,
+  copyright ownership, or licence scope is inferred here.
+
+PROVENANCE REFERENCES, NOT BUNDLED LICENCE CLAIMS
+
+The downloader design-research note cites
+ShZhao27208/Aut_Sci_Download at revision
+5e0de4cf68ab48dce8763fe7ca76a6f29874afc2 and
+kermitt2/article_dataset_builder at revision
+920fe298a81061e8a26d55d13829ccb6deb6501c. Those citations document research
+inputs; they do not by themselves establish that code was copied or determine
+the licence scope of files in this repository.
+
+BUNDLED FIGURE-EXAMPLE PROVENANCE
+
+The 15 PNG examples retained under
+skills/nature-figure/assets/{chart-atlas,gallery}/ are byte-identical to files
+in the adopted source revision and were distributed there under the root Apache
+License 2.0. The adopted snapshot supplied no separate per-file author or
+licence notice for them. This distribution makes no new authorship claim and
+records exact paths and SHA-256 values in skills/nature-figure/assets/README.md.
+
+INTENTIONALLY OMITTED MATERIAL
+
+The `figures4papers` snapshot present in the adopted source repository is not
+redistributed here because no corresponding licence was identified in that
+snapshot. Public visibility, an attribution, or a repository mention alone is
+not treated as evidence of redistribution permission.

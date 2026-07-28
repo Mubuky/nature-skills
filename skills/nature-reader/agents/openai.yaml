@@ -1,0 +1,7 @@
+# MODIFIED IN THIS DERIVATIVE: generated UI metadata; see ../../../NOTICE (Apache-2.0 section 4(b)).
+interface:
+  display_name: "Nature Bilingual Reader"
+  short_description: "Create bilingual, source-anchored paper readers"
+  default_prompt: "Use $nature-reader to create a bilingual, figure-aware, source-anchored reader for this full paper."
+policy:
+  allow_implicit_invocation: true

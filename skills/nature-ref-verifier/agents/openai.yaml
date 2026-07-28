@@ -1,0 +1,7 @@
+# MODIFIED IN THIS DERIVATIVE: generated UI metadata; see ../../../NOTICE (Apache-2.0 section 4(b)).
+interface:
+  display_name: "Nature Reference Verifier"
+  short_description: "Verify every field in existing references"
+  default_prompt: "Use $nature-ref-verifier to verify every bibliographic field in this reference list and report safe corrections."
+policy:
+  allow_implicit_invocation: true

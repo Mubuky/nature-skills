@@ -1,0 +1,7 @@
+# MODIFIED IN THIS DERIVATIVE: generated UI metadata; see ../../../NOTICE (Apache-2.0 section 4(b)).
+interface:
+  display_name: "Nature Literature Downloader"
+  short_description: "Retrieve lawful full text and supplements"
+  default_prompt: "Use $nature-downloader to lawfully retrieve and validate the full text and requested supplements for these known papers."
+policy:
+  allow_implicit_invocation: true

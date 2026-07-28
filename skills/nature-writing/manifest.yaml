@@ -1,0 +1,121 @@
+# MODIFIED IN THIS DERIVATIVE: deep references now load only for material need; see ../../NOTICE (Apache-2.0 section 4(b)).
+name: nature-writing
+version: 1.0.0
+description: >
+  Declarative manifest for the static/dynamic split. SKILL.md uses this to
+  decide which fragments to load for a drafting, restructuring, or
+  initial-submission request.
+
+always_load:
+  - static/core/stance.md
+  - static/core/workflow.md
+  - static/core/output-format.md
+
+axes:
+  task:
+    detect: |
+      Use submission-package when the user requests first-submission or
+      pre-submission materials such as an initial cover letter, title page,
+      highlights, author contributions, availability/declaration statements,
+      reviewer suggestions, or a complete submission checklist. Use manuscript
+      for manuscript sections and argument development. Revision correspondence
+      after an editor decision belongs to nature-response, not this skill.
+    values:
+      manuscript:          static/fragments/task/manuscript.md
+      submission-package: static/fragments/task/submission-package.md
+    default: manuscript
+    multi: false
+
+  paper_type:
+    detect: |
+      Decide what kind of paper or section is being drafted. Default to research.
+      Use the user's stated framing first; fall back to inference from their
+      material. Map writing's older taxonomy (mechanism/method/resource/device/
+      model/clinical/materials/computational/interdisciplinary) onto these five.
+    values:
+      research:       static/fragments/paper_type/research.md
+      methods:        static/fragments/paper_type/methods.md
+      hypothesis:     static/fragments/paper_type/hypothesis.md
+      algorithmic:    static/fragments/paper_type/algorithmic.md
+      review:         static/fragments/paper_type/review.md
+    default: research
+    multi: false
+
+  section:
+    detect: |
+      Identify which section(s) the user wants drafted or rebuilt. The user
+      may name one or several. Infer when safe; ask only when an ambiguity
+      materially changes the requested deliverable. Title and abstract often
+      need to be drafted last but planned early.
+    values:
+      abstract:       static/fragments/section/abstract.md
+      intro:          static/fragments/section/intro.md
+      related-work:   static/fragments/section/related-work.md
+      method:         static/fragments/section/method.md
+      experiments:    static/fragments/section/experiments.md
+      discussion:     static/fragments/section/discussion.md
+      conclusion:     static/fragments/section/conclusion.md
+      title:          static/fragments/section/title.md
+    multi: true
+
+  language:
+    detect: |
+      Detect the source language of the user's notes. Use zh-to-en when the
+      input is Chinese, mixed Chinese-English, or organized as Chinese lab
+      notes. Otherwise use en.
+    values:
+      en:             static/fragments/language/en.md
+      zh-to-en:       static/fragments/language/zh-to-en.md
+    default: en
+    multi: false
+
+  journal:
+    detect: |
+      Use the journal value the user names. If the user says "Nature-family"
+      generically or names a Nature subjournal, use nature. If they name
+      Nature Communications, use nat-comms. Otherwise generic.
+    values:
+      nature:         static/fragments/journal/nature.md
+      nat-comms:      static/fragments/journal/nat-comms.md
+      generic:        static/fragments/journal/generic.md
+    default: generic
+    multi: false
+
+references:
+  on_demand:
+    - condition: a multi-section argument needs reader-order diagnosis beyond the selected section fragments
+      path: references/reader-workflow.md
+    - condition: paper type is genuinely ambiguous or a hybrid contribution does not map cleanly to one manifest value
+      path: references/paper-type-taxonomy.md
+    - condition: citation attribution, intellectual debt, AI-use boundaries, permissions, or confidential material requires an explicit ethics check
+      path: references/ethics.md
+    - condition: a multi-section job or inconsistent source terminology requires a persistent canonical terminology table
+      path: references/terminology-ledger.md
+    - condition: selected section fragments do not resolve the required section-level architecture or argument order
+      path: references/article-architecture.md
+    - condition: genre-aware 2025 Nat Commun empirical structure, quantified connector/diction preferences, or research/review/perspective/comment/benchmark differences
+      path: references/nat-comms-2025-corpus.md
+    - condition: the abstract fragment is insufficient, the user requests deeper alternatives, or QA finds an unresolved abstract-structure failure
+      path: references/abstract.md
+    - condition: the user explicitly requests a Nature-family summary paragraph or deeper broad-audience opening patterns
+      path: references/nature-summary-paragraph.md
+    - condition: the introduction fragment is insufficient, the user requests deeper patterns, or QA finds an unresolved framing problem
+      path: references/introduction.md
+    - condition: related-work synthesis needs deeper source-grouping or comparison patterns than the selected fragment provides
+      path: references/related-work.md
+    - condition: method drafting needs deeper module-motivation, reproducibility, or worked-pattern guidance than the selected fragment provides
+      path: references/method.md
+    - condition: experiment planning needs deeper baseline, ablation, metric, or evidence-chain guidance than the selected fragment provides
+      path: references/experiments.md
+    - condition: the conclusion fragment is insufficient or QA finds unresolved contribution-evidence-boundary alignment
+      path: references/conclusion.md
+    - condition: user asks whether a paragraph flows; use reverse outlining
+      path: references/paragraph-flow.md
+    - condition: final manuscript self-review, rejection-risk audit, claim-evidence alignment
+      path: references/paper-review.md
+    - condition: initial cover letter, title page, highlights, declarations, suggested reviewers, complete first-submission package, or submission-readiness audit
+      path: references/submission-package.md
+    - condition: deeper Chinese-author repair patterns beyond the language fragment
+      path: references/chinese-author-workflow.md
+    - condition: user wants concrete abstract/introduction/method examples
+      path: references/examples/index.md

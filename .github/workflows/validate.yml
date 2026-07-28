@@ -1,0 +1,58 @@
+# New unified validation workflow for the context-engineered edition; see NOTICE.
+name: Validate
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  repository:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install validation dependency
+        run: python3 -m pip install --disable-pip-version-check pyyaml
+
+      - name: Regenerate metadata and require a clean tree
+        run: |
+          python3 scripts/generate_openai_metadata.py
+          git diff --exit-code -- skills
+
+      - name: Run repository validators
+        run: |
+          python3 scripts/validate_context_engineering.py
+          python3 scripts/validate_trigger_cases.py
+          python3 scripts/validate-repository.py
+          python3 scripts/validate-skill-metadata.py
+          python3 scripts/validate-workflows.py
+          bash -n scripts/update-codex-skills.sh
+          python3 scripts/test_update_codex_skills.py
+
+      - name: Run dependency-light regression tests
+        run: |
+          python3 -m unittest discover -s skills/nature-citation/tests -p 'test_*.py'
+          python3 -m unittest discover -s skills/nature-paper-to-patent/tests -p 'test_*.py'
+          python3 -m unittest discover -s skills/nature-downloader/tests/python -p 'test_*.py'
+          node --test skills/nature-downloader/tests/unit/*.test.mjs
+          python3 skills/nature-figure/scripts/validate_figure.py --self-test

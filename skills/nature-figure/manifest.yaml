@@ -1,0 +1,71 @@
+# MODIFIED IN THIS DERIVATIVE: backend persistence and neutral-QA routing were revised; see ../../NOTICE (Apache-2.0 section 4(b)).
+name: nature-figure
+version: 2.1.0
+description: >
+  Declarative manifest for the static/dynamic split. SKILL.md uses this to
+  decide which fragments to load for a given figure request. The main axis is
+  the plotting backend (Python or R). Existing project context and an explicit
+  or saved preference should resolve most tasks without a blocking question.
+  The large design, API, pattern, and QA material stays on demand.
+
+always_load:
+  # Skill-local figure contract
+  - static/core/contract.md
+  - static/core/stance.md
+
+preference:
+  backend_script: scripts/nature_figure_backend.py
+  config_env: NATURE_FIGURE_CONFIG
+  default_config: ~/.config/nature-skills/nature-figure.json
+  behavior: |
+    First honor an explicit Python/R choice, then existing source files and
+    project dependencies, then the saved preference. Ask only when both
+    backends are viable and the choice materially affects integration or
+    maintainability. Save the choice only when the user explicitly asks to make
+    it the future default; otherwise keep it task-local.
+
+axes:
+  backend:
+    detect: |
+      Determine the plotting backend from an explicit choice, existing source
+      files and project dependencies, or the saved preference. When the user
+      asks for a recommendation, use references/backend-selection.md and
+      proceed. Ask only if both backends remain viable and the choice materially
+      changes integration or maintenance. Keep drawing, layout semantics, and
+      export on one source-of-truth backend; neutral viewers and validators may
+      inspect the resulting files.
+    values:
+      python:  static/fragments/backend/python.md
+      r:       static/fragments/backend/r.md
+    multi: false
+
+references:
+  on_demand:
+    - condition: convert a user request into core conclusion, evidence hierarchy, panel map, and review-risk checks
+      path: references/figure-contract.md
+    - condition: user has not chosen Python/R, asks for a recommendation, or a mixed Python/R workflow is possible
+      path: references/backend-selection.md
+    - condition: user chooses R or provides R scripts/templates/data
+      path: references/r-workflow.md
+    - condition: adapt a user-provided or private R template collection without exposing source paths
+      path: references/r-template-index.md
+    - condition: reuse or adapt a bundled example, plotting script, preview image, or user-provided template against new data
+      path: references/asset-adaptation.md
+    - condition: before final delivery, revision package, microscopy/blot figure, or journal-specific audit
+      path: references/qa-contract.md
+    - condition: typography, color theory, layout rationale, export policy
+      path: references/design-theory.md
+    - condition: Python PALETTE, helper function signatures, validation rules
+      path: references/api.md
+    - condition: "Python layout patterns: hero panels, legend-only axes, dark image plates, asymmetric layouts"
+      path: references/common-patterns.md
+    - condition: "real Nature page archetypes: schematic-led composites, dark image plates, clinical triptychs, asymmetric hero layouts"
+      path: references/nature-2026-observations.md
+    - condition: writing or auditing figure/table legend text — Fig. N | title, panel style, stats in legend, Source Data boilerplate, attribution
+      path: references/figure-legend-conventions.md
+    - condition: "end-to-end walkthroughs: bars, trends, heatmaps"
+      path: references/tutorials.md
+    - condition: "validated Python CSV templates: volcano, ROC, marker dot plot, marginal density, or paired plot"
+      path: references/template-catalog.md
+    - condition: "radar, 3D sphere, fill_between, scatter, ablation-line, probability/manifold concept patterns"
+      path: references/chart-types.md

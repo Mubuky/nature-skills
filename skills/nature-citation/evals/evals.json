@@ -1,0 +1,30 @@
+{
+  "modified_notice": "Modified in the context-engineered edition; see repository NOTICE.",
+  "skill_name": "nature-citation",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "把这段文字自动分段并给出Nature/CNS及其子刊引用，导出Zotero RDF格式和HTML可视化：Tumor-associated macrophages promote immune evasion by suppressing cytotoxic T cell activity. Single-cell RNA sequencing reveals cellular heterogeneity in pancreatic cancer.",
+      "expected_output": "Segments the text and produces metadata-only candidate artifacts without insertion text or RDF; explains the semantic-screening record required before final export.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "只看Nature系列，把下面这一段按长度分段，给我文本和引用的对应关系，方便插入论文：single-cell RNA sequencing reveals cellular heterogeneity in pancreatic cancer. Spatial transcriptomics further preserves tissue context for interpreting tumor microenvironments.",
+      "expected_output": "Restricts scope to Nature Portfolio-style journals and produces a segment-reference correspondence table.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Find flagship Nature/Science/Cell references for: CRISPR screens can identify genetic dependencies in cancer cells. Export RIS for EndNote.",
+      "expected_output": "Restricts discovery to Nature, Science, and Cell; refuses RIS export until a screened selection with evidence locators is supplied.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "给我一个Nature系列引用导出，用户要自己选择下载 ENW、RIS 还是 Zotero RDF，并且先按年份筛选再勾选参考文献。",
+      "expected_output": "Keeps metadata candidates separate from final references and requires a validated screened-selection gate before ENW/RIS/Zotero RDF export.",
+      "files": []
+    }
+  ]
+}

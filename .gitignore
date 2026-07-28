@@ -1,0 +1,15 @@
+# New repository hygiene rules for the context-engineered edition; see NOTICE.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
+output/
+outputs/
+.DS_Store

@@ -1,0 +1,6 @@
+# Preserve fixed-format upstream exports and source notices byte-for-byte.
+skills/nature-academic-search/references/pubmed-28344011.* whitespace=-trailing-space,-blank-at-eof
+skills/nature-downloader/.gitattributes whitespace=-blank-at-eof
+skills/nature-downloader/LICENSE whitespace=-blank-at-eof
+skills/nature-proposal-writer/templates/*.md whitespace=-trailing-space,-blank-at-eof
+"skills/nature-reviewer/references/editorial criteria and processes.md" whitespace=-trailing-space

@@ -1,0 +1,7 @@
+# MODIFIED IN THIS DERIVATIVE: generated UI metadata; see ../../../NOTICE (Apache-2.0 section 4(b)).
+interface:
+  display_name: "Nature Paper to PPTX"
+  short_description: "Build evidence-led academic slide decks"
+  default_prompt: "Use $nature-paper2ppt to build a complete academic presentation from this paper and run available structural and rendered visual QA."
+policy:
+  allow_implicit_invocation: true
