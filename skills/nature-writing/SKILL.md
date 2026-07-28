@@ -1,11 +1,13 @@
 ---
 name: nature-writing
 description: >-
-  Plan, draft, structurally rebuild, faithfully polish, proofread, or translate
-  manuscript text, prepare initial-submission materials, and fix LaTeX layout.
-  Use for 论文写作、章节重构、论文润色、局部改写、翻译、排版、投稿信、标题页 or
-  作者贡献. Preserve claims and evidence when editing existing text. Do not use
-  for proposals, drafting post-review responses, citation search, or specialist
+  Implicit use requires an explicit or already-established Nature Portfolio
+  context. Plan, draft, structurally rebuild, faithfully polish, proofread, or
+  translate manuscript text, prepare
+  initial-submission materials, and fix LaTeX layout. Within that scope, use for
+  论文写作、章节重构、论文润色、局部改写、翻译、排版、投稿信、标题页 or 作者贡献.
+  Preserve claims and evidence when editing existing text. Do not use for
+  proposals, drafting post-review responses, citation search, or specialist
   data/statistics text; language-only editing of supplied response prose remains
   in scope.
 ---

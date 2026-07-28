@@ -28,8 +28,8 @@ Compared with the adopted upstream HEAD:
 
 | Metric | Upstream | This repository | Change |
 |---|---:|---:|---:|
-| Activation-description characters for the final 11 skill names | 7,612 | 4,065 | -47% |
-| Total `SKILL.md` lines for the final 11 skill names | 1,479 | 848 | -43% |
+| Activation-description characters for the final 11 skill names | 7,612 | 5,182 | -32% |
+| Total `SKILL.md` lines for the final 11 skill names | 1,479 | 871 | -41% |
 | `nature-downloader/SKILL.md` | 623 | 78 | -87% |
 | `nature-figure` directory | ~34 MB | ~5.8 MB | Unlicensed third-party snapshot removed |
 

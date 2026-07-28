@@ -1,11 +1,14 @@
 ---
 name: nature-figure
 description: >-
-  Design, revise, audit, and export submission-grade quantitative figures and
-  multi-panel layouts using Python or R, and route manuscript schematics or
-  graphical abstracts through an appropriate visual workflow. Use for 论文配图、
-  科研绘图、Figure 1 or journal-ready SVG/PDF/TIFF. Do not use for statistics-
-  only inference, dashboards, slide decks, photo editing, or general illustration.
+  Implicit use requires an explicit or already-established Nature Portfolio
+  context. Design, revise, audit, and export submission-grade quantitative
+  figures and multi-panel layouts
+  using Python or R, and route manuscript schematics or graphical abstracts
+  through an appropriate visual workflow. Within that scope, use for
+  论文配图、科研绘图、Figure 1 or journal-ready SVG/PDF/TIFF. Do not use for
+  statistics-only inference, dashboards, slide decks, photo editing, or general
+  illustration.
 ---
 
 <!-- MODIFIED IN THIS DERIVATIVE: backend persistence, neutral QA, path-safe tooling, and artifact privacy were revised; see ../../NOTICE (Apache-2.0 section 4(b)). -->

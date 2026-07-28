@@ -1,12 +1,14 @@
 ---
 name: nature-downloader
 description: >-
-  Lawfully retrieve known academic full text or supporting information through
-  OA sources, publisher APIs, CNKI, or user-authorized institutional access,
-  and validate downloaded artifacts. Use for 下载论文、获取全文、CNKI、OA PDF
-  or SI for a particular target; collect a missing DOI, title, or URL before
-  retrieval. Do not use for discovery, access-control bypass, citation
-  verification, or paper analysis.
+  Implicit use requires an explicit or already-established Nature Portfolio
+  context. Lawfully retrieve known academic full text or supporting information
+  through OA sources, publisher
+  APIs, CNKI, or user-authorized institutional access, and validate downloaded
+  artifacts. Within that scope, use for 下载论文、获取全文、CNKI、OA PDF or SI for
+  a particular target; collect a missing DOI, title, or URL before retrieval.
+  Do not use for discovery, access-control bypass, citation verification, or
+  paper analysis.
 ---
 
 <!-- Modified from Yuan1z0825/nature-skills; see ../../NOTICE. -->

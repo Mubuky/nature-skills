@@ -1,12 +1,14 @@
 ---
 name: nature-academic-search
 description: >-
-  Design multi-source scholarly searches, literature maps, search strategies,
-  citation-network or independent-citation audits, deduplicated evidence
-  tables, and field-level verification of existing bibliographies. Use for
-  文献检索、综述检索、MeSH、查论文、核对参考文献, systematic discovery, ref
-  checks, or bibliography cleanup. Do not use to attach sources to drafted
-  claims (nature-citation), download full text, or run alerts.
+  Implicit use requires an explicit or already-established Nature Portfolio
+  context. Design multi-source scholarly searches, literature maps, search
+  strategies, citation-network or
+  independent-citation audits, deduplicated evidence tables, and field-level
+  verification of existing bibliographies. Within that scope, use for
+  文献检索、综述检索、MeSH、查论文、核对参考文献, systematic discovery, ref checks,
+  or bibliography cleanup. Do not use to attach sources to drafted claims
+  (nature-citation), download full text, or run alerts.
 ---
 
 <!-- Modified from Yuan1z0825/nature-skills; see ../../NOTICE. -->

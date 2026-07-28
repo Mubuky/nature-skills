@@ -1,11 +1,13 @@
 ---
 name: nature-paper2ppt
 description: >-
-  Build or repair a complete academic PPTX from a scientific paper, including
-  an evidence-led narrative, selected figures, slide text, speaker notes, and
-  visual QA. Use for 论文做PPT、组会PPT、文献汇报、答辩/会议报告 or fixing crops,
-  alignment, overflow, and templated wording. Do not use for paper translation,
-  standalone figures, business slides, or text-only summaries.
+  Implicit use requires an explicit or already-established Nature Portfolio
+  context. Build or repair a complete academic PPTX from a scientific paper,
+  including an evidence-led narrative,
+  selected figures, slide text, speaker notes, and visual QA. Within that scope,
+  use for 论文做PPT、组会PPT、文献汇报、答辩/会议报告 or fixing crops, alignment,
+  overflow, and templated wording. Do not use for paper translation, standalone
+  figures, business slides, or text-only summaries.
 ---
 
 <!-- Modified from Yuan1z0825/nature-skills; see ../../NOTICE. -->

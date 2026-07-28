@@ -1,11 +1,13 @@
 ---
 name: nature-paper-to-patent
 description: >-
-  Convert papers, code, figures, or inventor notes into evidence-traceable
-  Chinese invention-patent drafts, claims, technical disclosures, source maps,
-  and claim-aligned figures or DOCX. Use for 技术交底书、权利要求、论文转专利、
-  专利点挖掘 or paper-patent audits. Do not provide legal/patentability opinions,
-  invent unsupported features, or replace professional review.
+  Implicit use requires an explicit or already-established Nature Portfolio
+  context. Convert papers, code, figures, or inventor notes into
+  evidence-traceable Chinese invention-patent
+  drafts, claims, technical disclosures, source maps, and claim-aligned figures
+  or DOCX. Within that scope, use for 技术交底书、权利要求、论文转专利、专利点挖掘 or
+  paper-patent audits. Do not provide legal/patentability opinions, invent
+  unsupported features, or replace professional review.
 ---
 
 <!-- Modified from Yuan1z0825/nature-skills; see ../../NOTICE. -->

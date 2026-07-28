@@ -1,11 +1,13 @@
 ---
 name: nature-data
 description: >-
-  Draft or audit Data/Code Availability statements, repository and accession
-  plans, dataset citations, FAIR metadata, source-data packaging, and language
-  for restricted data. Use for 数据可用性、数据共享、代码可用性 or journal
-  data-policy compliance. Do not use for general manuscript drafting,
-  statistical analysis, experiment logging, or unconfirmed repository writes.
+  Implicit use requires an explicit or already-established Nature Portfolio
+  context. Draft or audit Data/Code Availability statements, repository and
+  accession plans, dataset citations,
+  FAIR metadata, source-data packaging, and language for restricted data.
+  Within that scope, use for 数据可用性、数据共享、代码可用性 or journal data-policy
+  compliance. Do not use for general manuscript drafting, statistical analysis,
+  experiment logging, or unconfirmed repository writes.
 ---
 
 <!-- Modified from Yuan1z0825/nature-skills; see ../../NOTICE. -->
