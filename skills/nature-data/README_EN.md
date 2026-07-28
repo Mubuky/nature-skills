@@ -39,6 +39,5 @@
 
 ## Related Skills
 
-- `nature-experiment-log`: organize experiment logs and raw attachments into traceable data sources.
 - `nature-statistics`: check statistical reporting and source-data wording.
 - `nature-response`: respond to reviewer concerns about data availability.

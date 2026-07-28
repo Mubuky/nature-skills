@@ -53,5 +53,4 @@
 ## 相关技能
 
 - `nature-citation`：为手稿 claim 匹配 Nature/CNS/Cell 支撑文献。
-- `nature-literature-pipeline`：把一次性检索升级为持续文献监测。
 - `nature-ref-verifier`：逐条核查参考文献字段。

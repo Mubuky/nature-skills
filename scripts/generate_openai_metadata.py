@@ -31,20 +31,10 @@ UI = {
         "Retrieve lawful full text and supplements",
         "Use $nature-downloader to lawfully retrieve and validate the full text and requested supplements for these known papers.",
     ),
-    "nature-experiment-log": (
-        "Nature Experiment Log",
-        "Turn raw experiment notes into structured logs",
-        "Use $nature-experiment-log to convert these notes and images into a structured, traceable experiment record.",
-    ),
     "nature-figure": (
         "Nature Scientific Figures",
         "Build and audit publication-grade figures",
         "Use $nature-figure to create, revise, or audit this submission-grade scientific figure and validate the available exports.",
-    ),
-    "nature-literature-pipeline": (
-        "Nature Literature Pipeline",
-        "Automate recurring literature monitoring",
-        "Use $nature-literature-pipeline to configure a recurring, deduplicated literature digest for this research topic.",
     ),
     "nature-paper-card": (
         "Nature Paper Card",
@@ -65,11 +55,6 @@ UI = {
         "Nature Academic Polishing",
         "Polish academic prose without changing claims",
         "Use $nature-polishing to polish this manuscript text while preserving every scientific claim and uncertainty.",
-    ),
-    "nature-proposal-writer": (
-        "Nature Proposal Writer",
-        "Draft and audit evidence-first research proposals",
-        "Use $nature-proposal-writer to build an evidence-first research proposal with explicit argument and section contracts.",
     ),
     "nature-reader": (
         "Nature Bilingual Reader",

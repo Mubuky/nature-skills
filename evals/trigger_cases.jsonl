@@ -14,18 +14,10 @@
 {"id":"downloader-indirect","skill":"nature-downloader","kind":"indirect","prompt":"把 DOI 10.1000/example 的全文和 SI 下载并验证文件。","expected":["nature-downloader"]}
 {"id":"downloader-incomplete","skill":"nature-downloader","kind":"incomplete","prompt":"帮我下载一篇论文，但我还没给标题、DOI 或链接。","expected":["nature-downloader"]}
 {"id":"downloader-negative","skill":"nature-downloader","kind":"negative","prompt":"帮我找最近两年多模态 agent 的论文，先不要下载。","expected":["nature-academic-search"]}
-{"id":"experiment-log-direct","skill":"nature-experiment-log","kind":"direct","prompt":"Use $nature-experiment-log to archive these notes and microscope images.","expected":["nature-experiment-log"]}
-{"id":"experiment-log-indirect","skill":"nature-experiment-log","kind":"indirect","prompt":"把今天的实验文字、仪器截图和异常整理成可追溯 Markdown 日志。","expected":["nature-experiment-log"]}
-{"id":"experiment-log-incomplete","skill":"nature-experiment-log","kind":"incomplete","prompt":"记录这个实验，但样品批次和温度单位我还不确定。","expected":["nature-experiment-log"]}
-{"id":"experiment-log-negative","skill":"nature-experiment-log","kind":"negative","prompt":"用这些实验数据拟合模型并检验显著性。","expected":["nature-statistics"]}
 {"id":"figure-direct","skill":"nature-figure","kind":"direct","prompt":"Use $nature-figure to redesign Fig. 1 and export editable PDF and TIFF.","expected":["nature-figure"]}
 {"id":"figure-indirect","skill":"nature-figure","kind":"indirect","prompt":"重做主图的视觉层级、panel 逻辑和图例，并检查最终尺寸。","expected":["nature-figure"]}
 {"id":"figure-incomplete","skill":"nature-figure","kind":"incomplete","prompt":"我想重做论文 Fig. 2，但还没提供数据和当前图。","expected":["nature-figure"]}
 {"id":"figure-negative","skill":"nature-figure","kind":"negative","prompt":"把整篇论文做成一套带 speaker notes 的组会 PPTX。","expected":["nature-paper2ppt"]}
-{"id":"literature-pipeline-direct","skill":"nature-literature-pipeline","kind":"direct","prompt":"Use $nature-literature-pipeline to schedule a weekly multimodal-agent digest.","expected":["nature-literature-pipeline"]}
-{"id":"literature-pipeline-indirect","skill":"nature-literature-pipeline","kind":"indirect","prompt":"每天早上推送 5 篇新的 GUI agent 论文，去重并归档。","expected":["nature-literature-pipeline"]}
-{"id":"literature-pipeline-incomplete","skill":"nature-literature-pipeline","kind":"incomplete","prompt":"我想做定时文献监控，但频率和投递位置还没定。","expected":["nature-literature-pipeline"]}
-{"id":"literature-pipeline-negative","skill":"nature-literature-pipeline","kind":"negative","prompt":"一次性找出 2026 年语音生成最重要的 20 篇论文。","expected":["nature-academic-search"]}
 {"id":"paper-card-direct","skill":"nature-paper-card","kind":"direct","prompt":"Use $nature-paper-card to create a source-grounded deep-reading card.","expected":["nature-paper-card"]}
 {"id":"paper-card-indirect","skill":"nature-paper-card","kind":"indirect","prompt":"给这篇论文做方法—实验—结论证据链和可检验研究想法。","expected":["nature-paper-card"]}
 {"id":"paper-card-incomplete","skill":"nature-paper-card","kind":"incomplete","prompt":"我想做一张单篇精读卡，但现在只有论文标题。","expected":["nature-paper-card"]}
@@ -42,10 +34,6 @@
 {"id":"polishing-indirect","skill":"nature-polishing","kind":"indirect","prompt":"只润色这段 Discussion 的英文和段落衔接，不增加内容。","expected":["nature-polishing"]}
 {"id":"polishing-incomplete","skill":"nature-polishing","kind":"incomplete","prompt":"我需要论文润色，但还没有贴要修改的原文。","expected":["nature-polishing"]}
 {"id":"polishing-negative","skill":"nature-polishing","kind":"negative","prompt":"根据这些实验结果和提纲从零起草完整 Discussion。","expected":["nature-writing"]}
-{"id":"proposal-direct","skill":"nature-proposal-writer","kind":"direct","prompt":"Use $nature-proposal-writer to build an evidence-first grant proposal.","expected":["nature-proposal-writer"]}
-{"id":"proposal-indirect","skill":"nature-proposal-writer","kind":"indirect","prompt":"帮我写国家自然科学基金研究方案，先做证据表和章节契约。","expected":["nature-proposal-writer"]}
-{"id":"proposal-incomplete","skill":"nature-proposal-writer","kind":"incomplete","prompt":"我要写开题报告，但研究范围和已有证据还不清楚。","expected":["nature-proposal-writer"]}
-{"id":"proposal-negative","skill":"nature-proposal-writer","kind":"negative","prompt":"根据论文结果起草一个标准期刊摘要，不是基金或开题。","expected":["nature-writing"]}
 {"id":"reader-direct","skill":"nature-reader","kind":"direct","prompt":"Use $nature-reader to make a bilingual, source-anchored full-paper reader.","expected":["nature-reader"]}
 {"id":"reader-indirect","skill":"nature-reader","kind":"indirect","prompt":"全文中英文对照，图表放回相关段落，并保留源定位。","expected":["nature-reader"]}
 {"id":"reader-incomplete","skill":"nature-reader","kind":"incomplete","prompt":"帮我做全文双语精读，但还没有 PDF、DOI 或链接。","expected":["nature-reader"]}
@@ -74,14 +62,11 @@
 {"id":"citation-implicit-en","skill":"nature-citation","kind":"implicit-en","prompt":"Check whether each claim in this paragraph is actually supported and return verified references in RIS format.","expected":["nature-citation"]}
 {"id":"data-implicit-en","skill":"nature-data","kind":"implicit-en","prompt":"Draft journal-ready Data and Code Availability statements for our public, restricted, and third-party datasets.","expected":["nature-data"]}
 {"id":"downloader-implicit-en","skill":"nature-downloader","kind":"implicit-en","prompt":"I have the DOI list; retrieve lawful full text and supporting files and record an auditable status for every paper.","expected":["nature-downloader"]}
-{"id":"experiment-log-implicit-en","skill":"nature-experiment-log","kind":"implicit-en","prompt":"Turn these bench notes, instrument screenshots, and voice transcript into a traceable structured experiment record.","expected":["nature-experiment-log"]}
 {"id":"figure-implicit-en","skill":"nature-figure","kind":"implicit-en","prompt":"Redesign these results as a publication-grade multi-panel scientific figure and verify the final-size exports.","expected":["nature-figure"]}
-{"id":"literature-pipeline-implicit-en","skill":"nature-literature-pipeline","kind":"implicit-en","prompt":"Set up a recurring literature monitor that searches, deduplicates, ranks, summarizes, and archives a weekly digest.","expected":["nature-literature-pipeline"]}
 {"id":"paper-card-implicit-en","skill":"nature-paper-card","kind":"implicit-en","prompt":"Create a source-grounded deep-reading card that separates the paper's evidence, claims, limitations, and open questions.","expected":["nature-paper-card"]}
 {"id":"paper-to-patent-implicit-en","skill":"nature-paper-to-patent","kind":"implicit-en","prompt":"Convert this paper and codebase into an evidence-traceable Chinese technical disclosure with draft claims for attorney review.","expected":["nature-paper-to-patent"]}
 {"id":"paper2ppt-implicit-en","skill":"nature-paper2ppt","kind":"implicit-en","prompt":"Build a complete academic PPTX from this paper, including speaker notes, visual assets, and slide-level quality checks.","expected":["nature-paper2ppt"]}
 {"id":"polishing-implicit-en","skill":"nature-polishing","kind":"implicit-en","prompt":"Polish this finished manuscript into concise journal English without changing claims, uncertainty, citations, or numbers.","expected":["nature-polishing"]}
-{"id":"proposal-writer-implicit-en","skill":"nature-proposal-writer","kind":"implicit-en","prompt":"Turn these aims, preliminary results, and constraints into an evidence-first research proposal and audit its argument.","expected":["nature-proposal-writer"]}
 {"id":"reader-implicit-en","skill":"nature-reader","kind":"implicit-en","prompt":"Reconstruct this full paper as a bilingual, source-anchored reader with figures placed beside the relevant text.","expected":["nature-reader"]}
 {"id":"ref-verifier-implicit-en","skill":"nature-ref-verifier","kind":"implicit-en","prompt":"Audit every bibliography entry against authoritative records and report safe field-level corrections for DOI, authors, title, year, and pages.","expected":["nature-ref-verifier"]}
 {"id":"response-implicit-en","skill":"nature-response","kind":"implicit-en","prompt":"Prepare a point-by-point author response and revision ledger for this editor decision and the actual reviewer comments.","expected":["nature-response"]}
@@ -100,5 +85,4 @@
 {"id":"multi-reader-card","kind":"multi-skill","prompt":"Build a full bilingual figure-aware reader and a separate critical evidence card for this paper.","expected":["nature-reader","nature-paper-card"]}
 {"id":"multi-ppt-figure","kind":"multi-skill","prompt":"Create the complete conference deck from this paper and redraw its central mechanism as a publication-grade scientific figure.","expected":["nature-paper2ppt","nature-figure"]}
 {"id":"multi-citation-reference","kind":"multi-skill","prompt":"Verify that each manuscript claim is supported, then audit all resulting bibliography fields against authoritative records.","expected":["nature-citation","nature-ref-verifier"]}
-{"id":"multi-proposal-search","kind":"multi-skill","prompt":"Develop an evidence-first grant proposal and build the reproducible literature search needed to substantiate its key gap.","expected":["nature-proposal-writer","nature-academic-search"]}
 {"id":"multi-writing-polishing","kind":"multi-skill","prompt":"Draft the Results from the supplied evidence, then polish the completed section into concise journal English without changing claims.","expected":["nature-writing","nature-polishing"]}
