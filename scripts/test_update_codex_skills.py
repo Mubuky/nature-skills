@@ -58,6 +58,27 @@ class UpdaterBoundaryTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("filesystem root", result.stderr)
 
+    def test_core_profile_installs_only_seven_core_skills(self) -> None:
+        expected = [
+            "nature-academic-search",
+            "nature-citation",
+            "nature-data",
+            "nature-figure",
+            "nature-response",
+            "nature-reviewer",
+            "nature-writing",
+        ]
+        with tempfile.TemporaryDirectory(prefix="nature-updater-test.") as tmp:
+            destination = Path(tmp) / "dest"
+
+            result = self.run_updater(destination)
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertEqual(
+                sorted(path.name for path in destination.iterdir()),
+                expected,
+            )
+
 
 if __name__ == "__main__":
     unittest.main()

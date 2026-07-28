@@ -41,4 +41,4 @@
 
 - `nature-figure`: put statistical information into figures and source data.
 - `nature-response`: respond to statistical reviewer comments.
-- `nature-polishing`: polish the English wording of statistical descriptions.
+- `nature-writing`: use its polish-existing route for statistical-reporting prose.

@@ -35,10 +35,11 @@
 
 - 不会把论文内容改写成无法回溯来源的泛泛介绍。
 - 图像质量不足、PDF 扫描质量差或原图无法提取时，会说明替代方案。
-- 如果任务是全文翻译或逐段阅读，优先使用 `nature-reader`。
+- 全文翻译或逐段阅读不属于本技能；如有需要，可先使用 `nature-writing`
+  的 polish-existing 路由做保真翻译。
 
 ## 相关技能
 
-- `nature-reader`：先建立全文中英对照和图表 source map。
 - `nature-figure`：重画汇报中的机制图或方法图。
+- `nature-writing`：在制作幻灯片前保真翻译已有论文文本。
 - `presentations`：对生成的 PPTX 做进一步版式编辑。

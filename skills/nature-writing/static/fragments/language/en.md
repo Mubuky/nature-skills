@@ -4,10 +4,12 @@ When the source notes are already in English, default to standard scientific-Eng
 
 ## Sentence rules
 
-- Aim for `10-30` word sentences in drafts.
+- Treat sentence length as a diagnostic, not a quota; split only when syntax or
+  competing propositions impede comprehension.
 - One main proposition per sentence; split if the sentence carries two.
 - Prefer subject-verb-object order. Avoid stacked prepositional chains.
-- Avoid em dashes as prose punctuation in drafts unless the user explicitly asks. Use commas, parentheses, or short sentences.
+- Follow the manuscript's established punctuation and target-journal style.
+  Use em dashes only when they improve clarity and remain consistent.
 
 ## Paragraph rules
 

@@ -1,6 +1,7 @@
 # Paper-type taxonomy
 
-Canonical 5-type vocabulary used by both `nature-polishing` and `nature-writing` (and any future skill on the `paper_type` axis).
+Canonical 5-type vocabulary used by `nature-writing` and any future skill on
+the `paper_type` axis.
 
 ## The five types
 
@@ -31,11 +32,11 @@ Some older notes use a longer taxonomy (mechanism / method / resource / device /
 - resource → usually **methods** (a dataset/benchmark paper) or **research**
 - interdisciplinary → use the dominant argument structure, not the field label
 
-## Skill-specific action layers
+## Action layer
 
-Each skill's `static/fragments/paper_type/<type>.md` adds the **action layer** for that skill on top of this taxonomy:
+`nature-writing/static/fragments/paper_type/<type>.md` adds constructive rules
+(argument chain and drafting order) on top of this taxonomy. The
+`polish-existing` special route uses a separate fidelity-first diagnostic
+workflow rather than loading these drafting fragments.
 
-- `nature-polishing` adds diagnostic rules (what to look for, what to fix).
-- `nature-writing` adds constructive rules (argument chain, drafting order).
-
-The taxonomy here is the **shared vocabulary**; the action is skill-specific.
+The taxonomy here is the shared vocabulary; the fragments supply the action.

@@ -1,4 +1,4 @@
-<!-- MODIFIED IN THIS DERIVATIVE: rendering is conditional on available tooling and unrun visual QA must be reported explicitly; see ../../../NOTICE (Apache-2.0 section 4(b)). -->
+<!-- MODIFIED IN THIS DERIVATIVE: rendering is conditional on available tooling and unrun visual QA must be reported explicitly; see repository NOTICE. -->
 
 # LaTeX layout & float typesetting for Nature-style manuscripts
 

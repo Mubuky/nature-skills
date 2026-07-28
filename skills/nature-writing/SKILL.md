@@ -1,11 +1,13 @@
 ---
 name: nature-writing
 description: >-
-  Plan, draft, or structurally rebuild manuscript sections and initial-
-  submission materials from author-provided evidence, claims, figures, or notes.
-  Use for 基于作者证据从零起草论文、撰写/重构摘要/引言/方法/结果/讨论、论文结构、
-  投稿信、标题页 or 作者贡献. Do not use for language-only polishing, proposals,
-  post-review responses, citation search, or specialist data/statistics text.
+  Plan, draft, structurally rebuild, faithfully polish, proofread, or translate
+  manuscript text, prepare initial-submission materials, and fix LaTeX layout.
+  Use for 论文写作、章节重构、论文润色、局部改写、翻译、排版、投稿信、标题页 or
+  作者贡献. Preserve claims and evidence when editing existing text. Do not use
+  for proposals, drafting post-review responses, citation search, or specialist
+  data/statistics text; language-only editing of supplied response prose remains
+  in scope.
 ---
 
 <!-- MODIFIED IN THIS DERIVATIVE: evidence boundaries, non-blocking routing, progressive disclosure, and completion gates were revised; see ../../NOTICE (Apache-2.0 section 4(b)). -->
@@ -17,15 +19,33 @@ This skill is split into two layers:
 - A **static layer** under `static/` that holds versioned, reusable content fragments (core stance + workflow, paper-type playbooks, per-section drafting guidance, initial-submission guidance, language-specific rules, per-journal style).
 - A **dynamic layer** (this file plus `manifest.yaml`) that detects the request's axes and loads only the fragments needed for the current job.
 
-Do not try to apply the drafting logic from memory or from this router. Always load fragments from disk as described below.
+Do not apply drafting or editing logic from memory. Load only the route selected
+below.
 
 ## Routing protocol
 
-Follow these five steps every time the skill is invoked.
+### 0. Route existing-content requests before drafting
+
+Read [manifest.yaml](manifest.yaml), then detect one or more `special_routes`:
+
+- `polish-existing` — language-only editing, proofreading, faithful translation,
+  or local restructuring of supplied manuscript text. Read
+  [references/polishing-workflow.md](references/polishing-workflow.md). Skip the
+  drafting core and drafting axes unless the edit exposes a separate drafting
+  request.
+- `latex-layout` — placement or typesetting rather than wording. Read
+  [references/latex-layout.md](references/latex-layout.md). Skip every prose
+  route.
+- no special route — continue with the five drafting steps below. A request to
+  draft and then polish the new draft stays on this ordinary drafting route.
+
+This fast path keeps polishing and layout rules out of ordinary drafting
+context and prevents a local edit from silently becoming a manuscript rewrite.
 
 ### 1. Load the manifest and the core layer
 
-Read [manifest.yaml](manifest.yaml). It declares the axes (`task`, `paper_type`, `section`, `language`, `journal`), the allowed values, and the file paths each value maps to.
+For an ordinary drafting request, the manifest declares the axes (`task`, `paper_type`,
+`section`, `language`, `journal`), their values, and mapped files.
 
 Also read every file listed under `always_load`. These hold the default stance, writing workflow, and output format that apply to every drafting job.
 

@@ -46,16 +46,6 @@ UI = {
         "Build evidence-led academic slide decks",
         "Use $nature-paper2ppt to build a complete academic presentation from this paper and run available structural and rendered visual QA.",
     ),
-    "nature-polishing": (
-        "Nature Academic Polishing",
-        "Polish academic prose without changing claims",
-        "Use $nature-polishing to polish this manuscript text while preserving every scientific claim and uncertainty.",
-    ),
-    "nature-reader": (
-        "Nature Bilingual Reader",
-        "Create bilingual, source-anchored paper readers",
-        "Use $nature-reader to create a bilingual, figure-aware, source-anchored reader for this full paper.",
-    ),
     "nature-response": (
         "Nature Reviewer Response",
         "Draft rigorous reviewer-response packages",
@@ -73,8 +63,8 @@ UI = {
     ),
     "nature-writing": (
         "Nature Manuscript Writing",
-        "Draft manuscripts and initial submissions",
-        "Use $nature-writing to draft or structurally rebuild this manuscript from the supplied evidence and author notes.",
+        "Draft, restructure, or polish manuscripts",
+        "Use $nature-writing to draft, restructure, or faithfully polish this manuscript without inventing evidence or changing supported claims.",
     ),
 }
 

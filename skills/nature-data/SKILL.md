@@ -62,4 +62,5 @@ The files under `references/` are deep references, not defaults. Open them on de
 - The static layer is versioned and reviewable; the core stays small for a normal statement.
 - The dynamic layer keeps each invocation cheap: the policy, repository, and FAIR depth load only when a step needs them.
 - The router itself is short on purpose. Update fragments and references, not this file, when adding scope.
-- This structure mirrors `nature-writing`, `nature-polishing`, `nature-reader`, `nature-paper2ppt`, `nature-figure`, `nature-citation`, and `nature-response`.
+- This structure mirrors `nature-writing`, `nature-figure`, `nature-citation`,
+  and `nature-response`.

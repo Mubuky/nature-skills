@@ -1,6 +1,6 @@
 # Reader workflow
 
-Used by both `nature-polishing` and `nature-writing`. Always-loaded shared core.
+On-demand reader-order diagnostic for `nature-writing`.
 
 ## The reader's question sequence
 
