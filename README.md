@@ -3,7 +3,7 @@
 # Nature Skills
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-2ea44f)](LICENSE)
-![Skills](https://img.shields.io/badge/skills-15-0ea5e9)
+![Skills](https://img.shields.io/badge/skills-13-0ea5e9)
 [![Validate](https://github.com/Mubuky/nature-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/Mubuky/nature-skills/actions/workflows/validate.yml)
 [English](README_EN.md)
 
@@ -31,8 +31,8 @@ Agent Skills。每个技能都是可独立安装的轻量路由器，详细规�
 
 | 指标 | 上游 | 本仓库 | 变化 |
 |---|---:|---:|---:|
-| 保留的 15 个触发描述总字符 | 10,462 | 5,481 | -48% |
-| 保留的 15 个 `SKILL.md` 总行数 | 1,970 | 1,113 | -44% |
+| 保留的 13 个触发描述总字符 | 9,407 | 4,740 | -50% |
+| 保留的 13 个 `SKILL.md` 总行数 | 1,622 | 997 | -39% |
 | `nature-downloader/SKILL.md` | 623 行 | 78 行 | -87% |
 | `nature-figure` 目录 | 约 34 MB | 约 5.8 MB | 移除无明确许可证的第三方快照 |
 
@@ -40,7 +40,7 @@ Agent Skills。每个技能都是可独立安装的轻量路由器，详细规�
 
 - 全部 frontmatter 仅保留 `name` 与 `description`；
 - 目录名、技能名、manifest 与 UI 元数据一致；
-- 15/15 个技能包含 `agents/openai.yaml`；
+- 13/13 个技能包含 `agents/openai.yaml`；
 - 每个技能均有 direct / indirect / incomplete / negative / English implicit
   触发样例，另有套件级负例与多技能组合；
 - 写作/润色、预审/回复、检索/配引文/书目核验等相邻边界显式化；
@@ -56,12 +56,10 @@ Agent Skills。每个技能都是可独立安装的轻量路由器，详细规�
 
 | 技能 | 用途 | 不负责 |
 |---|---|---|
-| [`nature-academic-search`](skills/nature-academic-search/README.md) | 多源检索、检索式、文献图谱、引文网络审计 | 给具体句子补引用 |
+| [`nature-academic-search`](skills/nature-academic-search/README.md) | 多源检索、书目字段核验、文献图谱与引文网络审计 | 给具体句子补引用 |
 | [`nature-citation`](skills/nature-citation/README.md) | claim-to-source 支撑核验与引文导出 | 书目字段清洗 |
-| [`nature-ref-verifier`](skills/nature-ref-verifier/README.md) | 核对作者、题名、卷期页、DOI 与版本冲突 | 判断来源是否支持论断 |
 | [`nature-downloader`](skills/nature-downloader/README.md) | 合法 OA/API/CNKI/机构全文与 SI 获取 | 搜索未知论文或绕过访问控制 |
 | [`nature-reader`](skills/nature-reader/README.md) | 全文中英文对照、图表就近、稳定源定位 | summary-only 或正式审稿 |
-| [`nature-paper-card`](skills/nature-paper-card/README.md) | 单篇论文结构化证据链与批判性精读卡 | 全文双语重建 |
 
 ### 写作、投稿与评审
 
@@ -97,7 +95,7 @@ npx skills add Mubuky/nature-skills --global --agent codex \
   --skill nature-writing --yes --copy
 ```
 
-安装全部 15 个技能：
+安装全部 13 个技能：
 
 ```bash
 npx skills add Mubuky/nature-skills --global --agent codex \
@@ -105,7 +103,7 @@ npx skills add Mubuky/nature-skills --global --agent codex \
 ```
 
 若保留一个本地 clone，可使用仓库脚本。默认 `core` profile 只同步本项目原先
-使用的 11 个核心技能；`--profile all` 同步全部 15 个：
+使用的 11 个核心技能；`--profile all` 同步全部 13 个：
 
 ```bash
 scripts/update-codex-skills.sh --profile core
@@ -134,10 +132,11 @@ node --test skills/nature-downloader/tests/unit/*.test.mjs
 python3 skills/nature-figure/scripts/validate_figure.py --self-test
 ```
 
-`evals/trigger_cases.jsonl` 是 88 条带标签的静态路由覆盖集：75 条逐技能样例、
-6 条期望不触发本套件的负例，以及 7 条多技能组合。它只验证 schema、标签和
-覆盖，不测模型激活准确率；重大修改仍应在相同真实任务上做 forward test。质量、
-证据完整性与最终产物正确性通过后，再比较上下文、token、延迟或调用次数。
+`evals/trigger_cases.jsonl` 是 82 条带标签的静态路由覆盖集：70 条逐技能样例
+（含合并后的书目核验扩展用例）、6 条期望不触发本套件的负例，以及 6 条多技能
+组合。它只验证 schema、标签和覆盖，不测模型激活准确率；重大修改仍应在相同
+真实任务上做 forward test。质量、证据完整性与最终产物正确性通过后，再比较
+上下文、token、延迟或调用次数。
 
 ## 许可证与来源
 

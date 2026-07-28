@@ -2,10 +2,11 @@
 name: nature-academic-search
 description: >-
   Design multi-source scholarly searches, literature maps, search strategies,
-  citation-network or independent-citation audits, and deduplicated evidence
-  tables. Use for 文献检索、综述检索、MeSH、查论文 or systematic discovery.
-  Do not use to attach sources to drafted claims (nature-citation), verify an
-  existing bibliography (nature-ref-verifier), download full text, or run alerts.
+  citation-network or independent-citation audits, deduplicated evidence
+  tables, and field-level verification of existing bibliographies. Use for
+  文献检索、综述检索、MeSH、查论文、核对参考文献, systematic discovery, ref
+  checks, or bibliography cleanup. Do not use to attach sources to drafted
+  claims (nature-citation), download full text, or run alerts.
 ---
 
 <!-- Modified from Yuan1z0825/nature-skills; see ../../NOTICE. -->
@@ -40,6 +41,8 @@ Map the user's need to one or more `workflow` values:
 - `mesh-strategy` — build a MeSH/PubMed search strategy.
 - `citation-file-mgmt` — convert/manage `.nbib`/`.ris`/`.bib` files.
 - `reference-mgmt` — BibTeX, related-article discovery, ID conversion.
+- `bibliography-verification` — verify existing reference metadata field by
+  field and report evidence-backed corrections.
 - `strict-other-citation-impact-audit` — determine strict independent other-citations, build article-level citation metric tables, identify high-profile citers (academy members, presidents/deans, talent-award holders, fellows, field leaders), and extract how they cited the target paper.
 
 A combined request (for example search then export) may need more than one. State the detected workflow(s) in one short line before proceeding.
@@ -58,8 +61,9 @@ Apply the loaded material in this order:
 
 Report specific tool failures and continue with remaining lawful sources;
 broaden terms when there are no results. Never turn an unavailable source or a
-failed query into a fabricated record. Route field-by-field validation of an
-existing bibliography to `nature-ref-verifier`.
+failed query into a fabricated record. Keep bibliography metadata verification
+separate from claim-to-source support checking, which belongs to
+`nature-citation`.
 
 ### 5. Reach for references only when needed
 

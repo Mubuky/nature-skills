@@ -3,11 +3,11 @@
 # Nature Skills
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-2ea44f)](LICENSE)
-![Skills](https://img.shields.io/badge/skills-15-0ea5e9)
+![Skills](https://img.shields.io/badge/skills-13-0ea5e9)
 [![Validate](https://github.com/Mubuky/nature-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/Mubuky/nature-skills/actions/workflows/validate.yml)
 [中文](README.md)
 
-Fifteen focused Agent Skills for evidence-grounded research writing, paper
+Thirteen focused Agent Skills for evidence-grounded research writing, paper
 reading, literature workflows, figures, submission, peer review, and research
 records. Each skill is independently installable; detailed policies, rubrics,
 templates, and deterministic scripts load only when needed.
@@ -28,8 +28,8 @@ Compared with the adopted upstream HEAD:
 
 | Metric | Upstream | This repository | Change |
 |---|---:|---:|---:|
-| Activation-description characters for the retained 15 skills | 10,462 | 5,481 | -48% |
-| Total `SKILL.md` lines for the retained 15 skills | 1,970 | 1,113 | -44% |
+| Activation-description characters for the retained 13 skills | 9,407 | 4,740 | -50% |
+| Total `SKILL.md` lines for the retained 13 skills | 1,622 | 997 | -39% |
 | `nature-downloader/SKILL.md` | 623 | 78 | -87% |
 | `nature-figure` directory | ~34 MB | ~5.8 MB | Unlicensed third-party snapshot removed |
 
@@ -45,12 +45,10 @@ See [the design note](docs/context-engineering.md).
 
 | Skill | Primary job |
 |---|---|
-| [`nature-academic-search`](skills/nature-academic-search/README_EN.md) | Multi-source discovery, search strategies, maps, and citation-network audits |
+| [`nature-academic-search`](skills/nature-academic-search/README_EN.md) | Multi-source discovery, bibliography verification, maps, and citation-network audits |
 | [`nature-citation`](skills/nature-citation/README_EN.md) | Claim-level supporting literature and reference export |
-| [`nature-ref-verifier`](skills/nature-ref-verifier/README_EN.md) | Field-level verification of existing bibliography metadata |
 | [`nature-downloader`](skills/nature-downloader/README_EN.md) | Lawful full-text and supporting-information retrieval |
 | [`nature-reader`](skills/nature-reader/README_EN.md) | Full bilingual, figure-aware, source-anchored paper readers |
-| [`nature-paper-card`](skills/nature-paper-card/README_EN.md) | Source-grounded deep-reading cards for one paper |
 | [`nature-writing`](skills/nature-writing/README_EN.md) | Evidence-grounded manuscript and initial-submission drafting |
 | [`nature-polishing`](skills/nature-polishing/README_EN.md) | Claim-preserving prose editing, translation, and LaTeX layout |
 | [`nature-reviewer`](skills/nature-reviewer/README_EN.md) | Pre-submission referee simulation |
@@ -84,7 +82,7 @@ npx skills add Mubuky/nature-skills --global --agent codex \
 ```
 
 From a local clone, the updater defaults to the 11-skill `core` profile; use
-`--profile all` for all 15:
+`--profile all` for all 13:
 
 ```bash
 scripts/update-codex-skills.sh --profile core
@@ -114,9 +112,10 @@ node --test skills/nature-downloader/tests/unit/*.test.mjs
 python3 skills/nature-figure/scripts/validate_figure.py --self-test
 ```
 
-The 88 labelled cases in `evals/trigger_cases.jsonl` comprise 75 per-skill
-cases, six suite-level negatives expected to activate no Nature skill, and
-seven multi-skill combinations. This corpus checks static schema, labels, and
+The 82 labelled cases in `evals/trigger_cases.jsonl` comprise 70 per-skill
+cases (including the merged bibliography-verification extensions), six
+suite-level negatives expected to activate no Nature skill, and six
+multi-skill combinations. This corpus checks static schema, labels, and
 coverage; it does not measure model activation accuracy. Substantial changes
 should also run representative forward tests; quality and evidence completeness
 come before context or cost reductions.

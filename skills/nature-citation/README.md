@@ -41,6 +41,5 @@
 
 ## 相关技能
 
-- `nature-academic-search`：更宽范围的文献搜索和引用指标审计。
-- `nature-ref-verifier`：校验已选参考文献的元数据。
+- `nature-academic-search`：更宽范围的文献搜索、引用指标审计，以及使用 bibliography-verification workflow 校验已选参考文献元数据。
 - `nature-writing`：把引用选择整合回手稿论证。
