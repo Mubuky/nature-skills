@@ -1,7 +1,0 @@
-# MODIFIED IN THIS DERIVATIVE: generated UI metadata; see ../../../NOTICE (Apache-2.0 section 4(b)).
-interface:
-  display_name: "Nature Paper Card"
-  short_description: "Create a grounded deep-reading paper card"
-  default_prompt: "Use $nature-paper-card to create a source-grounded deep-reading card for this paper."
-policy:
-  allow_implicit_invocation: true

@@ -49,6 +49,6 @@
 
 ## Related Skills
 
-- `nature-academic-search`: broader literature search and citation-metric audits.
-- `nature-ref-verifier`: verify selected reference metadata.
+- `nature-academic-search`: broader literature search, citation-metric audits,
+  and bibliography-verification for selected reference metadata.
 - `nature-writing`: integrate citation choices back into manuscript argument.

@@ -5,8 +5,8 @@ description: >-
   side-by-side translation, figure/table placement, terminology consistency,
   and stable source anchors from PDF, DOI, arXiv, HTML, or text. Use for
   全文阅读、全文翻译、原文对照、中英文对照 or figure-aware full-paper reading.
-  Use nature-paper-card for summary or critical analysis without full bilingual
-  reconstruction; do not use for formal review, batch search, or rewriting.
+  Do not use for summary-only requests, formal review, batch search, or
+  rewriting.
 ---
 
 <!-- Modified from Yuan1z0825/nature-skills; see ../../NOTICE. -->

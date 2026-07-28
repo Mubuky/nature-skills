@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 UI = {
     "nature-academic-search": (
         "Nature Academic Search",
-        "Discover and map scholarly literature",
+        "Search literature and verify bibliographies",
         "Use $nature-academic-search to build a reproducible search strategy and evidence table for this research question.",
     ),
     "nature-citation": (
@@ -36,11 +36,6 @@ UI = {
         "Build and audit publication-grade figures",
         "Use $nature-figure to create, revise, or audit this submission-grade scientific figure and validate the available exports.",
     ),
-    "nature-paper-card": (
-        "Nature Paper Card",
-        "Create a grounded deep-reading paper card",
-        "Use $nature-paper-card to create a source-grounded deep-reading card for this paper.",
-    ),
     "nature-paper-to-patent": (
         "Nature Paper to Patent",
         "Turn research evidence into Chinese patent drafts",
@@ -60,11 +55,6 @@ UI = {
         "Nature Bilingual Reader",
         "Create bilingual, source-anchored paper readers",
         "Use $nature-reader to create a bilingual, figure-aware, source-anchored reader for this full paper.",
-    ),
-    "nature-ref-verifier": (
-        "Nature Reference Verifier",
-        "Verify every field in existing references",
-        "Use $nature-ref-verifier to verify every bibliographic field in this reference list and report safe corrections.",
     ),
     "nature-response": (
         "Nature Reviewer Response",

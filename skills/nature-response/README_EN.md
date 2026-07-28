@@ -44,4 +44,4 @@
 - `nature-reviewer`: simulate reviewer comments before submission.
 - `nature-polishing`: polish reviewer-response and cover-letter English.
 - `nature-statistics`: handle statistical reviewer comments.
-- `nature-ref-verifier`: verify reference-error comments.
+- `nature-academic-search`: use its bibliography-verification workflow for reference-error comments.
