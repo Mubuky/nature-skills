@@ -72,5 +72,4 @@ and testable follow-up ideas.
 - `nature-reader`: generate bilingual full-text Markdown, figure-text alignment, and a stable source map.
 - `nature-academic-search`: verify field history, external knowledge connections, or related work.
 - `nature-reviewer`: produce a formal reviewer-style assessment.
-- `nature-literature-pipeline`: discover, screen, and deliver papers in batches.
 - `nature-paper2ppt`: convert paper content into presentation slides.

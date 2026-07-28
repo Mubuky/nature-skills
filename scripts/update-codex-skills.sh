@@ -29,7 +29,7 @@ usage() {
 Usage: scripts/update-codex-skills.sh [options]
 
 Options:
-  --profile core|all  Install the 11 core skills (default) or all 18 skills.
+  --profile core|all  Install the 11 core skills (default) or all 15 skills.
   --dest PATH         Override the Codex skills directory.
   --pull              Run git pull --ff-only before installing.
   --check             Compare the selected profile without changing files.

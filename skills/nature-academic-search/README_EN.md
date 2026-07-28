@@ -57,5 +57,4 @@ influential-citer analysis.
 ## Related Skills
 
 - `nature-citation`: match Nature/CNS/Cell supporting citations for manuscript claims.
-- `nature-literature-pipeline`: turn one-off search into ongoing literature monitoring.
 - `nature-ref-verifier`: verify reference-list metadata field by field.

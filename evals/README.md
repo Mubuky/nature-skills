@@ -3,12 +3,12 @@
 # Static routing coverage
 
 `trigger_cases.jsonl` is a labelled routing-coverage corpus, not a record of
-model predictions. Its 104 cases contain:
+model predictions. Its 88 cases contain:
 
-- 90 per-skill cases: `direct`, `indirect`, `incomplete`, `negative`, and
-  `implicit-en` for each of the 18 skills;
+- 75 per-skill cases: `direct`, `indirect`, `incomplete`, `negative`, and
+  `implicit-en` for each of the 15 skills;
 - 6 `suite-negative` cases with `expected: []`;
-- 8 `multi-skill` cases with two or more expected skills.
+- 7 `multi-skill` cases with two or more expected skills.
 
 Each JSONL object follows
 [`trigger_case.schema.json`](trigger_case.schema.json): it has a unique `id`, a

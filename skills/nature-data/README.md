@@ -39,6 +39,5 @@
 
 ## 相关技能
 
-- `nature-experiment-log`：把实验记录和原始附件整理成可追溯数据来源。
 - `nature-statistics`：检查统计报告和 source data 表述。
 - `nature-response`：回应审稿人关于数据可用性的质疑。

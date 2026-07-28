@@ -1,7 +1,0 @@
-# MODIFIED IN THIS DERIVATIVE: generated UI metadata; see ../../../NOTICE (Apache-2.0 section 4(b)).
-interface:
-  display_name: "Nature Experiment Log"
-  short_description: "Turn raw experiment notes into structured logs"
-  default_prompt: "Use $nature-experiment-log to convert these notes and images into a structured, traceable experiment record."
-policy:
-  allow_implicit_invocation: true

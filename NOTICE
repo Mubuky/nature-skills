@@ -31,16 +31,6 @@ KNOWN COMPONENT-LEVEL NOTICES
   incorporates and refactors ideas from an Apache-2.0
   `academic-figure-skill` workflow. The retained source does not establish a
   repository URL or revision for that reference, so none is asserted here.
-- Metadata in the adopted source snapshot named 十五 (JL Lab) as author and
-  stated `MIT` for `nature-experiment-log` and `nature-literature-pipeline`.
-  The current tree contains no component-level licence file establishing the
-  scope of those metadata statements, so this notice preserves the statements
-  without inferring copyright ownership or licence scope.
-- Metadata in the adopted source snapshot stated `MIT` for
-  `nature-proposal-writer`. The current tree contains no component-level licence
-  file establishing the scope of that statement; no additional attribution,
-  copyright ownership, or licence scope is inferred here.
-
 PROVENANCE REFERENCES, NOT BUNDLED LICENCE CLAIMS
 
 The downloader design-research note cites
