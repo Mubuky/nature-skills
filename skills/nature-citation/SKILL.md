@@ -1,9 +1,11 @@
 ---
 name: nature-citation
 description: >-
-  Find, verify, and place claim-level scholarly support in manuscript text,
-  with traceable claim-to-source mapping and reference-manager export. Use for
-  补引用、找引用、写论文加参考文献, Nature/CNS source constraints, or checking
+  Implicit use requires an explicit or already-established Nature Portfolio
+  context. Find, verify, and place claim-level scholarly support in manuscript
+  text, with traceable
+  claim-to-source mapping and reference-manager export. Within that scope, use
+  for 补引用、找引用、写论文加参考文献, Nature/CNS source constraints, or checking
   whether a source supports a sentence. Do not use for broad discovery,
   bibliography metadata cleanup, full-text retrieval, or prose-only polishing.
 ---

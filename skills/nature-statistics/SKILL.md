@@ -1,11 +1,13 @@
 ---
 name: nature-statistics
 description: >-
-  Plan, audit, or revise manuscript statistical methods and reporting; when
-  data and design are supplied and computation is requested, run bounded analyses.
-  Cover experimental units, n, tests, assumptions, effects, intervals,
-  multiplicity, randomization/blinding, and figure legends. Use for 统计审查、
-  p值、样本量、多重比较 or 图注统计. Do not do unsupported reanalysis.
+  Implicit use requires an explicit or already-established Nature Portfolio
+  context. Plan, audit, or revise manuscript statistical methods and reporting;
+  when data and design are
+  supplied and computation is requested, run bounded analyses. Cover
+  experimental units, n, tests, assumptions, effects, intervals, multiplicity,
+  randomization/blinding, and figure legends. Within that scope, use for
+  统计审查、p值、样本量、多重比较 or 图注统计. Do not do unsupported reanalysis.
 ---
 
 <!-- Modified from Yuan1z0825/nature-skills; see ../../NOTICE. -->

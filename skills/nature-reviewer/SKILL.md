@@ -1,11 +1,13 @@
 ---
 name: nature-reviewer
 description: >-
-  Simulate a pre-submission referee assessment of a supplied full or partial
-  manuscript, abstract, or manuscript package, with reports and a synthesis on
-  novelty, significance, rigor, evidence, reproducibility, and readability.
-  Use for 模拟审稿、投稿前自审 or reviewer report. Do not draft real rebuttals,
-  polish prose, or perform a statistics-only reporting audit.
+  Implicit use requires an explicit or already-established Nature Portfolio
+  context. Simulate a pre-submission referee assessment of a supplied full or
+  partial manuscript, abstract, or
+  manuscript package, with reports and a synthesis on novelty, significance,
+  rigor, evidence, reproducibility, and readability. Within that scope, use for
+  模拟审稿、投稿前自审 or reviewer report. Do not draft real rebuttals, polish
+  prose, or perform a statistics-only reporting audit.
 ---
 
 <!-- Modified from Yuan1z0825/nature-skills; see ../../NOTICE. -->

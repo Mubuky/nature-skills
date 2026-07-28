@@ -1,11 +1,13 @@
 ---
 name: nature-response
 description: >-
-  Draft, revise, or audit post-decision correspondence: point-by-point reviewer
-  responses, rebuttals, revision cover letters, editor replies, change excerpts,
-  and LaTeX templates. Use for 审稿意见回复、逐点回复、修回信、大修/小修回复、
-  rebuttal or 标红修改. Do not use for mock review, initial-submission cover
-  letters, manuscript drafting, or language-only polishing.
+  Implicit use requires an explicit or already-established Nature Portfolio
+  context. Draft, revise, or audit post-decision correspondence: point-by-point
+  reviewer responses, rebuttals,
+  revision cover letters, editor replies, change excerpts, and LaTeX templates.
+  Within that scope, use for 审稿意见回复、逐点回复、修回信、大修/小修回复、rebuttal or
+  标红修改. Do not use for mock review, initial-submission cover letters,
+  manuscript drafting, or language-only polishing.
 ---
 
 <!-- Modified from Yuan1z0825/nature-skills; see ../../NOTICE. -->
