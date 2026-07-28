@@ -70,4 +70,5 @@ The files under `references/` and `templates/` are deep resources, not defaults.
 - The static layer is versioned and reviewable; the core stays small for a normal response.
 - The dynamic layer keeps each invocation cheap: the difficult-case, taxonomy, and QA depth load only when a step needs them.
 - The router itself is short on purpose. Update fragments and references, not this file, when adding scope.
-- This structure mirrors `nature-writing`, `nature-polishing`, `nature-reader`, `nature-paper2ppt`, `nature-figure`, and `nature-citation`.
+- This structure mirrors `nature-writing`, `nature-paper2ppt`,
+  `nature-figure`, and `nature-citation`.

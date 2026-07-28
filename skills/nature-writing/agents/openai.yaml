@@ -1,7 +1,7 @@
 # MODIFIED IN THIS DERIVATIVE: generated UI metadata; see ../../../NOTICE (Apache-2.0 section 4(b)).
 interface:
   display_name: "Nature Manuscript Writing"
-  short_description: "Draft manuscripts and initial submissions"
-  default_prompt: "Use $nature-writing to draft or structurally rebuild this manuscript from the supplied evidence and author notes."
+  short_description: "Draft, restructure, or polish manuscripts"
+  default_prompt: "Use $nature-writing to draft, restructure, or faithfully polish this manuscript without inventing evidence or changing supported claims."
 policy:
   allow_implicit_invocation: true

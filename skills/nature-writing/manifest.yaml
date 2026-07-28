@@ -1,11 +1,25 @@
 # MODIFIED IN THIS DERIVATIVE: deep references now load only for material need; see ../../NOTICE (Apache-2.0 section 4(b)).
 name: nature-writing
-version: 1.0.0
+version: 1.1.0
 description: >
   Declarative manifest for the static/dynamic split. SKILL.md uses this to
-  decide which fragments to load for a drafting, restructuring, or
-  initial-submission request.
+  route faithful polishing and LaTeX layout without loading the drafting core,
+  or to select fragments for drafting, restructuring, and initial submission.
 
+special_routes:
+  detect: |
+    Use polish-existing for language-only editing, proofreading, faithful
+    translation, or local restructuring of supplied manuscript text. Use
+    latex-layout for float placement, spacing, page breaks, sparse pages,
+    stranded headings, or other LaTeX typesetting requests. Load both only when
+    the user requests both operations on existing material. A request to draft
+    and then polish newly drafted prose remains on the ordinary drafting route.
+  values:
+    polish-existing: references/polishing-workflow.md
+    latex-layout:    references/latex-layout.md
+  multi: true
+
+# Load these only when no special route applies.
 always_load:
   - static/core/stance.md
   - static/core/workflow.md
@@ -83,6 +97,10 @@ axes:
 
 references:
   on_demand:
+    - condition: language-only editing, proofreading, faithful translation, or bounded local restructuring of supplied manuscript text
+      path: references/polishing-workflow.md
+    - condition: LaTeX layout or typesetting help such as float placement, sparse pages, stranded headings, multi-panel arrangement, or Supplementary Information density
+      path: references/latex-layout.md
     - condition: a multi-section argument needs reader-order diagnosis beyond the selected section fragments
       path: references/reader-workflow.md
     - condition: paper type is genuinely ambiguous or a hybrid contribution does not map cleanly to one manifest value

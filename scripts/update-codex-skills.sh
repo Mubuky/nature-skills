@@ -15,10 +15,6 @@ CORE_SKILLS=(
   nature-citation
   nature-data
   nature-figure
-  nature-paper-to-patent
-  nature-paper2ppt
-  nature-polishing
-  nature-reader
   nature-response
   nature-reviewer
   nature-writing
@@ -29,7 +25,7 @@ usage() {
 Usage: scripts/update-codex-skills.sh [options]
 
 Options:
-  --profile core|all  Install the 11 core skills (default) or all 13 skills.
+  --profile core|all  Install the 7 core skills (default) or all 11 skills.
   --dest PATH         Override the Codex skills directory.
   --pull              Run git pull --ff-only before installing.
   --check             Compare the selected profile without changing files.

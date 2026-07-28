@@ -3,14 +3,14 @@
 # Nature Skills
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-2ea44f)](LICENSE)
-![Skills](https://img.shields.io/badge/skills-13-0ea5e9)
+![Skills](https://img.shields.io/badge/skills-11-0ea5e9)
 [![Validate](https://github.com/Mubuky/nature-skills/actions/workflows/validate.yml/badge.svg)](https://github.com/Mubuky/nature-skills/actions/workflows/validate.yml)
 [中文](README.md)
 
-Thirteen focused Agent Skills for evidence-grounded research writing, paper
-reading, literature workflows, figures, submission, peer review, and research
-records. Each skill is independently installable; detailed policies, rubrics,
-templates, and deterministic scripts load only when needed.
+Eleven focused Agent Skills for evidence-grounded research writing, literature
+workflows, figures, submission, peer review, and research records. Each skill
+is independently installable; detailed policies, rubrics, templates, and
+deterministic scripts load only when needed.
 
 This is an independently maintained derivative of
 [`Yuan1z0825/nature-skills`](https://github.com/Yuan1z0825/nature-skills).
@@ -28,8 +28,8 @@ Compared with the adopted upstream HEAD:
 
 | Metric | Upstream | This repository | Change |
 |---|---:|---:|---:|
-| Activation-description characters for the retained 13 skills | 9,407 | 4,740 | -50% |
-| Total `SKILL.md` lines for the retained 13 skills | 1,622 | 997 | -39% |
+| Activation-description characters for the final 11 skill names | 7,612 | 4,065 | -47% |
+| Total `SKILL.md` lines for the final 11 skill names | 1,479 | 848 | -43% |
 | `nature-downloader/SKILL.md` | 623 | 78 | -87% |
 | `nature-figure` directory | ~34 MB | ~5.8 MB | Unlicensed third-party snapshot removed |
 
@@ -48,9 +48,7 @@ See [the design note](docs/context-engineering.md).
 | [`nature-academic-search`](skills/nature-academic-search/README_EN.md) | Multi-source discovery, bibliography verification, maps, and citation-network audits |
 | [`nature-citation`](skills/nature-citation/README_EN.md) | Claim-level supporting literature and reference export |
 | [`nature-downloader`](skills/nature-downloader/README_EN.md) | Lawful full-text and supporting-information retrieval |
-| [`nature-reader`](skills/nature-reader/README_EN.md) | Full bilingual, figure-aware, source-anchored paper readers |
-| [`nature-writing`](skills/nature-writing/README_EN.md) | Evidence-grounded manuscript and initial-submission drafting |
-| [`nature-polishing`](skills/nature-polishing/README_EN.md) | Claim-preserving prose editing, translation, and LaTeX layout |
+| [`nature-writing`](skills/nature-writing/README_EN.md) | Evidence-grounded drafting, faithful polishing, LaTeX layout, and initial submission |
 | [`nature-reviewer`](skills/nature-reviewer/README_EN.md) | Pre-submission referee simulation |
 | [`nature-response`](skills/nature-response/README_EN.md) | Post-decision reviewer-response packages |
 | [`nature-data`](skills/nature-data/README_EN.md) | Data/Code Availability, repositories, citations, and FAIR metadata |
@@ -58,6 +56,13 @@ See [the design note](docs/context-engineering.md).
 | [`nature-figure`](skills/nature-figure/README_EN.md) | Submission-grade scientific figures and final-size QA |
 | [`nature-paper2ppt`](skills/nature-paper2ppt/README_EN.md) | Complete evidence-led academic PPTX decks |
 | [`nature-paper-to-patent`](skills/nature-paper-to-patent/README_EN.md) | Evidence-traceable Chinese patent and disclosure drafts |
+
+### Installation profiles
+
+| Profile | Skills |
+|---|---|
+| Core (default) | `nature-academic-search`, `nature-citation`, `nature-data`, `nature-figure`, `nature-response`, `nature-reviewer`, `nature-writing` |
+| On demand (GitHub non-core) | `nature-downloader`, `nature-statistics`, `nature-paper2ppt`, `nature-paper-to-patent` |
 
 ## Install
 
@@ -81,8 +86,8 @@ npx skills add Mubuky/nature-skills --global --agent codex \
   --skill '*' --yes --copy
 ```
 
-From a local clone, the updater defaults to the 11-skill `core` profile; use
-`--profile all` for all 13:
+From a local clone, the updater defaults to the 7-skill `core` profile; use
+`--profile all` for all 11:
 
 ```bash
 scripts/update-codex-skills.sh --profile core
@@ -112,13 +117,13 @@ node --test skills/nature-downloader/tests/unit/*.test.mjs
 python3 skills/nature-figure/scripts/validate_figure.py --self-test
 ```
 
-The 82 labelled cases in `evals/trigger_cases.jsonl` comprise 70 per-skill
-cases (including the merged bibliography-verification extensions), six
-suite-level negatives expected to activate no Nature skill, and six
-multi-skill combinations. This corpus checks static schema, labels, and
-coverage; it does not measure model activation accuracy. Substantial changes
-should also run representative forward tests; quality and evidence completeness
-come before context or cost reductions.
+The 77 labelled cases in `evals/trigger_cases.jsonl` comprise 65 per-skill
+cases (including the merged bibliography-verification and faithful-polishing
+extensions), six suite-level negatives expected to activate no Nature skill,
+and six multi-skill combinations. This corpus checks static schema, labels,
+and coverage; it does not measure model activation accuracy. Substantial
+changes should also run representative forward tests; quality and evidence
+completeness come before context or cost reductions.
 
 ## License
 

@@ -10,7 +10,8 @@ Broad, multi-disciplinary. A reader outside the immediate subfield must be able 
 - For a `Nature` summary paragraph, use a staged funnel: `broad field -> sharper background -> exact problem -> here we show -> what the result changes -> broader context / outlook`.
 - Avoid jargon that does not appear in a typical Nature News piece. Define or replace.
 - Word count is unforgiving. Prefer cuts to compressions when a section runs long.
-- No em dashes in body prose.
+- Treat em-dash use as a project or journal preference; prioritize clarity and
+  consistency rather than imposing a blanket ban.
 - Hedging must be calibrated: avoid both overclaim (`proves`, `definitive`) and timidity (`might possibly suggest`).
 - The "Significance" framing matters. If the user's material does not naturally support broad significance, surface that before drafting around it.
 

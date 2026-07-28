@@ -9,9 +9,9 @@ papers). **Do not copy their wording.** Use the patterns to decide structure,
 move order, and signal words; the short quoted fragments are pattern markers,
 not text to reuse.
 
-> Companion of `references/article-architecture.md` (generic move orders) and
-> `nature-polishing/references/published-article-patterns.md`. This file adds
-> the 2025 CS/AI evidence layer, quantified word preferences, and genre splits.
+> Companion of `references/article-architecture.md` (generic move orders).
+> This file adds the 2025 CS/AI evidence layer, quantified word preferences,
+> and genre splits.
 
 ## 0. Decide the genre first — it picks the skeleton
 

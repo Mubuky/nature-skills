@@ -3,12 +3,13 @@
 # Static routing coverage
 
 `trigger_cases.jsonl` is a labelled routing-coverage corpus, not a record of
-model predictions. Its 82 cases contain:
+model predictions. Its 77 cases contain:
 
-- 70 per-skill cases: the five baseline kinds (`direct`, `indirect`,
-  `incomplete`, `negative`, and `implicit-en`) for each of the 13 skills, plus
+- 65 per-skill cases: the five baseline kinds (`direct`, `indirect`,
+  `incomplete`, `negative`, and `implicit-en`) for each of the 11 skills, plus
   five additional cases for the bibliography-verification workflow merged into
-  `nature-academic-search`;
+  `nature-academic-search` and five for the polishing workflow merged into
+  `nature-writing`;
 - 6 `suite-negative` cases with `expected: []`;
 - 6 `multi-skill` cases with two or more expected skills.
 

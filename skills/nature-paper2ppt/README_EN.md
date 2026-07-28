@@ -35,10 +35,12 @@
 
 - The skill does not turn paper content into generic, untraceable summaries.
 - If image quality is poor, the PDF is scanned, or figures cannot be extracted, the limitation and alternative are stated.
-- For full translation or paragraph-level reading, use `nature-reader` first.
+- Full translation or paragraph-level reading is outside this Skill; use
+  `nature-writing`'s polish-existing route first when a faithful translation is
+  needed.
 
 ## Related Skills
 
-- `nature-reader`: build full Chinese-English reading material and a figure source map first.
 - `nature-figure`: redraw mechanism or method diagrams for the deck.
+- `nature-writing`: faithfully translate supplied paper text before deck construction.
 - `presentations`: further edit the generated PPTX layout.

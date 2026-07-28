@@ -52,6 +52,5 @@
 
 ## Related Skills
 
-- `nature-reader`: turn the paper into traceable reading material first.
 - `nature-writing`: extract contribution and technical narrative.
 - `nature-figure`: draft patent flowcharts or structural schematics.

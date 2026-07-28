@@ -181,5 +181,4 @@ For the whole batch, use `--api-fallback-web` or `--no-api-fallback-web`. Web Ac
 
 ## Related Skills
 
-- `nature-reader`: turn obtained PDF/HTML into a full-paper reader.
 - `nature-academic-search`: find target papers from title, DOI, or topic.

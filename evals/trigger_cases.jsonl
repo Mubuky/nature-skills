@@ -26,14 +26,10 @@
 {"id":"paper2ppt-indirect","skill":"nature-paper2ppt","kind":"indirect","prompt":"把这篇论文做成组会汇报 PPTX，选关键图并写讲稿。","expected":["nature-paper2ppt"]}
 {"id":"paper2ppt-incomplete","skill":"nature-paper2ppt","kind":"incomplete","prompt":"我要做文献汇报 PPT，但还没提供论文或阅读笔记。","expected":["nature-paper2ppt"]}
 {"id":"paper2ppt-negative","skill":"nature-paper2ppt","kind":"negative","prompt":"只重绘论文的一张多面板结果图，不需要幻灯片。","expected":["nature-figure"]}
-{"id":"polishing-direct","skill":"nature-polishing","kind":"direct","prompt":"Use $nature-polishing to edit this paragraph without changing any claim.","expected":["nature-polishing"]}
-{"id":"polishing-indirect","skill":"nature-polishing","kind":"indirect","prompt":"只润色这段 Discussion 的英文和段落衔接，不增加内容。","expected":["nature-polishing"]}
-{"id":"polishing-incomplete","skill":"nature-polishing","kind":"incomplete","prompt":"我需要论文润色，但还没有贴要修改的原文。","expected":["nature-polishing"]}
-{"id":"polishing-negative","skill":"nature-polishing","kind":"negative","prompt":"根据这些实验结果和提纲从零起草完整 Discussion。","expected":["nature-writing"]}
-{"id":"reader-direct","skill":"nature-reader","kind":"direct","prompt":"Use $nature-reader to make a bilingual, source-anchored full-paper reader.","expected":["nature-reader"]}
-{"id":"reader-indirect","skill":"nature-reader","kind":"indirect","prompt":"全文中英文对照，图表放回相关段落，并保留源定位。","expected":["nature-reader"]}
-{"id":"reader-incomplete","skill":"nature-reader","kind":"incomplete","prompt":"帮我做全文双语精读，但还没有 PDF、DOI 或链接。","expected":["nature-reader"]}
-{"id":"reader-negative","skill":"nature-reader","kind":"negative","prompt":"不要翻译全文，请以投稿前审稿人视角评估手稿的 novelty、rigor 和 evidence gaps。","expected":["nature-reviewer"]}
+{"id":"writing-polishing-direct","skill":"nature-writing","kind":"direct","prompt":"Use $nature-writing to edit this paragraph without changing any claim.","expected":["nature-writing"]}
+{"id":"writing-polishing-indirect","skill":"nature-writing","kind":"indirect","prompt":"只润色这段 Discussion 的英文和段落衔接，不增加内容。","expected":["nature-writing"]}
+{"id":"writing-polishing-incomplete","skill":"nature-writing","kind":"incomplete","prompt":"我需要论文润色，但还没有贴要修改的原文。","expected":["nature-writing"]}
+{"id":"writing-polishing-negative","skill":"nature-writing","kind":"negative","prompt":"这些是真实审稿意见，请代表作者起草逐点 rebuttal。","expected":["nature-response"]}
 {"id":"academic-search-bibliography-direct","skill":"nature-academic-search","kind":"direct","prompt":"Use $nature-academic-search to check every field in this bibliography.","expected":["nature-academic-search"]}
 {"id":"academic-search-bibliography-indirect","skill":"nature-academic-search","kind":"indirect","prompt":"逐条核对作者顺序、标题、卷期页和 DOI，列出安全修正。","expected":["nature-academic-search"]}
 {"id":"academic-search-bibliography-incomplete","skill":"nature-academic-search","kind":"incomplete","prompt":"我要检查参考文献元数据，但还没有贴列表或 BibTeX。","expected":["nature-academic-search"]}
@@ -53,7 +49,7 @@
 {"id":"writing-direct","skill":"nature-writing","kind":"direct","prompt":"Use $nature-writing to draft this manuscript from the supplied evidence.","expected":["nature-writing"]}
 {"id":"writing-indirect","skill":"nature-writing","kind":"indirect","prompt":"根据结果、图和作者笔记起草 Results 与 Discussion。","expected":["nature-writing"]}
 {"id":"writing-incomplete","skill":"nature-writing","kind":"incomplete","prompt":"帮我从零写论文，但还没有提供核心 claim 和结果。","expected":["nature-writing"]}
-{"id":"writing-negative","skill":"nature-writing","kind":"negative","prompt":"正文已经完成，只做英文润色并保持论断强度。","expected":["nature-polishing"]}
+{"id":"writing-negative","skill":"nature-writing","kind":"negative","prompt":"检查独立实验单位、p 值、效应量、置信区间和多重比较是否正确。","expected":["nature-statistics"]}
 {"id":"academic-search-implicit-en","skill":"nature-academic-search","kind":"implicit-en","prompt":"Build a reproducible search across several scholarly databases, deduplicate the results, and show the query strategy.","expected":["nature-academic-search"]}
 {"id":"citation-implicit-en","skill":"nature-citation","kind":"implicit-en","prompt":"Check whether each claim in this paragraph is actually supported and return verified references in RIS format.","expected":["nature-citation"]}
 {"id":"data-implicit-en","skill":"nature-data","kind":"implicit-en","prompt":"Draft journal-ready Data and Code Availability statements for our public, restricted, and third-party datasets.","expected":["nature-data"]}
@@ -61,8 +57,7 @@
 {"id":"figure-implicit-en","skill":"nature-figure","kind":"implicit-en","prompt":"Redesign these results as a publication-grade multi-panel scientific figure and verify the final-size exports.","expected":["nature-figure"]}
 {"id":"paper-to-patent-implicit-en","skill":"nature-paper-to-patent","kind":"implicit-en","prompt":"Convert this paper and codebase into an evidence-traceable Chinese technical disclosure with draft claims for attorney review.","expected":["nature-paper-to-patent"]}
 {"id":"paper2ppt-implicit-en","skill":"nature-paper2ppt","kind":"implicit-en","prompt":"Build a complete academic PPTX from this paper, including speaker notes, visual assets, and slide-level quality checks.","expected":["nature-paper2ppt"]}
-{"id":"polishing-implicit-en","skill":"nature-polishing","kind":"implicit-en","prompt":"Polish this finished manuscript into concise journal English without changing claims, uncertainty, citations, or numbers.","expected":["nature-polishing"]}
-{"id":"reader-implicit-en","skill":"nature-reader","kind":"implicit-en","prompt":"Reconstruct this full paper as a bilingual, source-anchored reader with figures placed beside the relevant text.","expected":["nature-reader"]}
+{"id":"writing-polishing-implicit-en","skill":"nature-writing","kind":"implicit-en","prompt":"Polish this finished manuscript into concise journal English without changing claims, uncertainty, citations, or numbers.","expected":["nature-writing"]}
 {"id":"academic-search-bibliography-implicit-en","skill":"nature-academic-search","kind":"implicit-en","prompt":"Audit every bibliography entry against authoritative records and report safe field-level corrections for DOI, authors, title, year, and pages.","expected":["nature-academic-search"]}
 {"id":"response-implicit-en","skill":"nature-response","kind":"implicit-en","prompt":"Prepare a point-by-point author response and revision ledger for this editor decision and the actual reviewer comments.","expected":["nature-response"]}
 {"id":"reviewer-implicit-en","skill":"nature-reviewer","kind":"implicit-en","prompt":"Act as a rigorous referee before submission and assess novelty, significance, technical soundness, and evidence gaps.","expected":["nature-reviewer"]}
@@ -79,4 +74,4 @@
 {"id":"multi-search-download","kind":"multi-skill","prompt":"Run a reproducible literature search, then lawfully retrieve full text and supplements for the final DOI shortlist.","expected":["nature-academic-search","nature-downloader"]}
 {"id":"multi-ppt-figure","kind":"multi-skill","prompt":"Create the complete conference deck from this paper and redraw its central mechanism as a publication-grade scientific figure.","expected":["nature-paper2ppt","nature-figure"]}
 {"id":"multi-citation-reference","kind":"multi-skill","prompt":"Verify that each manuscript claim is supported, then audit all resulting bibliography fields against authoritative records.","expected":["nature-citation","nature-academic-search"]}
-{"id":"multi-writing-polishing","kind":"multi-skill","prompt":"Draft the Results from the supplied evidence, then polish the completed section into concise journal English without changing claims.","expected":["nature-writing","nature-polishing"]}
+{"id":"multi-writing-figure","kind":"multi-skill","prompt":"Draft the Results from the supplied evidence and redesign the central multi-panel figure to match the manuscript argument.","expected":["nature-writing","nature-figure"]}

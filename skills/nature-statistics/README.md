@@ -41,4 +41,4 @@
 
 - `nature-figure`：把统计信息落实到图件和 source data。
 - `nature-response`：回应统计类审稿意见。
-- `nature-polishing`：润色统计描述的英文表达。
+- `nature-writing`：使用 polish-existing 路由润色统计描述的英文表达。

@@ -42,6 +42,6 @@
 ## 相关技能
 
 - `nature-reviewer`：投稿前模拟审稿人意见。
-- `nature-polishing`：回复信和 cover letter 的英文语气打磨。
+- `nature-writing`：使用 polish-existing 路由打磨回复信和 cover letter 的英文语气。
 - `nature-statistics`：处理统计相关审稿意见。
 - `nature-academic-search`：使用 bibliography-verification workflow 核查参考文献错误类意见。
