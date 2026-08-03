@@ -55,6 +55,80 @@ def detect_backend(path: Path, requested: str) -> str:
     raise ValueError(f"cannot infer backend from {path.name}; pass --backend python or --backend r")
 
 
+def _module_file(base: Path) -> Path | None:
+    file_candidate = base.with_suffix(".py")
+    if file_candidate.is_file():
+        return file_candidate
+    package_candidate = base / "__init__.py"
+    if package_candidate.is_file():
+        return package_candidate
+    return None
+
+
+def _local_imports(path: Path, source: str, root: Path) -> list[Path]:
+    """Resolve Python imports that are actual files below the entry directory."""
+    tree = ast.parse(source)
+    resolved: list[Path] = []
+    root = root.resolve()
+
+    def add_candidate(base: Path) -> None:
+        candidate = _module_file(base)
+        if candidate is None:
+            return
+        candidate = candidate.resolve()
+        try:
+            candidate.relative_to(root)
+        except ValueError:
+            return
+        if candidate not in resolved:
+            resolved.append(candidate)
+
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Import):
+            for alias in node.names:
+                add_candidate(root.joinpath(*alias.name.split(".")))
+        elif isinstance(node, ast.ImportFrom):
+            if node.level:
+                base = path.parent.resolve()
+                for _ in range(node.level - 1):
+                    base = base.parent
+            else:
+                base = root
+            if node.module:
+                target = base.joinpath(*node.module.split("."))
+                add_candidate(target)
+            else:
+                for alias in node.names:
+                    add_candidate(base / alias.name)
+    return resolved
+
+
+def read_python_bundle(entry: Path) -> tuple[str, list[Path]]:
+    """Read an entry module plus recursively imported local Python modules."""
+    root = entry.parent.resolve()
+    pending = [entry.resolve()]
+    visited: list[Path] = []
+    sources: list[str] = []
+    while pending:
+        path = pending.pop(0)
+        if path in visited:
+            continue
+        source = path.read_text(encoding="utf-8-sig")
+        visited.append(path)
+        if visited == [path]:
+            sources.append(source)
+        else:
+            without_future = re.sub(
+                r"^\s*from\s+__future__\s+import\s+.*$",
+                "",
+                source,
+                flags=re.MULTILINE,
+            )
+            sources.append(f"\n# local module: {path.relative_to(root)}\n{without_future}")
+        pending.extend(candidate for candidate in _local_imports(path, source, root) if candidate not in visited)
+    return "\n".join(sources), visited
+
+
 def regex_hits(patterns: Iterable[str], source: str, flags: int = re.IGNORECASE) -> list[str]:
     hits: list[str] = []
     for pattern in patterns:
@@ -199,7 +273,11 @@ def check_raster_exports(source: str, _backend: str) -> Finding:
 def check_resolution(source: str, _backend: str) -> Finding:
     values = [
         int(value)
-        for value in re.findall(r"(?:dpi|res)\s*[:=]\s*(\d+)", source, re.IGNORECASE)
+        for value in re.findall(
+            r"['\"]?(?:dpi|res)['\"]?\s*(?::\s*(?:int|float))?\s*[:=]\s*(\d+)",
+            source,
+            re.IGNORECASE,
+        )
     ]
     if not values:
         return finding("RASTER-DPI", "WARN", "No explicit raster DPI/resolution found")
@@ -462,7 +540,11 @@ def main(argv: list[str] | None = None) -> int:
         return 2
     try:
         backend = detect_backend(args.source, args.backend)
-        source = args.source.read_text(encoding="utf-8-sig")
+        if backend == "python":
+            source, source_files = read_python_bundle(args.source)
+        else:
+            source = args.source.read_text(encoding="utf-8-sig")
+            source_files = [args.source]
     except (OSError, UnicodeError, ValueError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 2
@@ -472,6 +554,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.json:
         payload = {
             "source": str(args.source),
+            "source_files": [str(path) for path in source_files],
             "backend": backend,
             "summary": summary,
             "findings": [asdict(row) for row in findings],

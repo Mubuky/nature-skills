@@ -9,14 +9,24 @@ Each section includes the key code pattern extracted from production scripts.
 
 ## Radar / Polar Chart
 
-Used when comparing multiple methods across many benchmarks simultaneously.
+Use sparingly for roughly 3–8 complete metrics when the cyclic overview is
+itself useful. For many heterogeneous metrics, missing observations, or exact
+comparison, prefer a direction-aware matrix or small multiples. Every spoke
+needs a declared range and direction. Never infer `[0, 100]`, fill a missing
+spoke from other metrics, or clip an out-of-range value.
+
+The preserved VIGIL radar in the faithful gallery intentionally remains
+available because its production composition and benchmark-specific rings are
+visually valuable. Its filling/clipping semantics are flagged for review, not
+used as permission to delete the sample or silently impose the same policy on
+new data.
 
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
 
 def plot_radar(methods, colors, subtask_names, value_matrix,
-               benchmark_radii, display_range=(45, 90)):
+               benchmark_radii, directions, display_range=(0, 1)):
     """
     Parameters
     ----------
@@ -25,33 +35,61 @@ def plot_radar(methods, colors, subtask_names, value_matrix,
     subtask_names  : list[str]    — one spoke per subtask (may contain '\\n')
     value_matrix   : np.ndarray  — shape (n_subtasks, n_methods)
     benchmark_radii: dict         — {benchmark_name: [tick1, tick2, ...]} for normalization
+    directions     : list[str]    — one explicit "higher"/"lower" value per spoke
     display_range  : (r_min, r_max) — polar radial display window
     """
     r_lo, r_hi = display_range
     n_subtasks = len(subtask_names)
     n_methods  = len(methods)
 
-    fig = plt.figure(figsize=(12, 10))
+    if not 3 <= n_subtasks <= 8:
+        raise ValueError("use a matrix or small multiples outside 3–8 spokes")
+    value_matrix = np.asarray(value_matrix, dtype=float)
+    if len(colors) != n_methods:
+        raise ValueError("one color is required for every method")
+    if value_matrix.shape != (n_subtasks, n_methods):
+        raise ValueError("value_matrix shape must be (n_subtasks, n_methods)")
+    if not np.isfinite(value_matrix).all():
+        raise ValueError("radar values must be complete and finite")
+    if len(directions) != n_subtasks or not set(directions) <= {"higher", "lower"}:
+        raise ValueError("every spoke needs an explicit higher/lower direction")
+    if not r_hi > r_lo:
+        raise ValueError("display range must be increasing")
+
+    fig = plt.figure(figsize=(89 / 25.4, 89 / 25.4))
     ax  = fig.add_subplot(111, projection='polar')
 
     # Evenly spaced angles, clockwise from top
     angles = np.linspace(2 * np.pi, 0, n_subtasks, endpoint=False)
     angles_closed = np.append(angles, angles[0])
 
-    def _normalize(val, bench):
-        radii_list = benchmark_radii.get(bench, [0, 100])
+    def _normalize(val, bench, direction):
+        if bench not in benchmark_radii:
+            raise ValueError(f"missing declared range for {bench}")
+        radii_list = benchmark_radii[bench]
         span = max(radii_list) - min(radii_list)
         if span <= 0:
-            return (r_lo + r_hi) / 2
-        frac = np.clip((val - min(radii_list)) / span, 0, 1)
+            raise ValueError(f"non-positive display span for {bench}")
+        frac = (val - min(radii_list)) / span
+        if not 0 <= frac <= 1:
+            raise ValueError(f"value outside declared range for {bench}; do not clip")
+        if direction == "lower":
+            frac = 1 - frac
         return r_lo + (r_hi - r_lo) * frac
 
     subtask_benchmarks = [s.split('\\n', 1)[-1] if '\\n' in s else s
                           for s in subtask_names]
+    missing_ranges = [b for b in subtask_benchmarks if b not in benchmark_radii]
+    if missing_ranges:
+        raise ValueError(f"missing declared ranges: {missing_ranges}")
+    for benchmark in subtask_benchmarks:
+        ticks = np.asarray(benchmark_radii[benchmark], dtype=float)
+        if len(ticks) < 2 or not np.isfinite(ticks).all() or not np.all(np.diff(ticks) > 0):
+            raise ValueError("every spoke needs at least two strictly increasing finite range ticks")
 
     # Draw data polygons
     for m in range(n_methods):
-        norm_vals = np.array([_normalize(value_matrix[i, m], subtask_benchmarks[i])
+        norm_vals = np.array([_normalize(value_matrix[i, m], subtask_benchmarks[i], directions[i])
                               for i in range(n_subtasks)])
         closed = np.append(norm_vals, norm_vals[0])
         ax.plot(angles_closed, closed, color=colors[m], lw=2, label=methods[m])
@@ -73,14 +111,11 @@ def plot_radar(methods, colors, subtask_names, value_matrix,
     for a in angles:
         ax.plot([a, a], [r_lo, r_hi], color='gray', lw=0.5, zorder=4)
 
-    # Benchmark-level contour polygons
-    max_levels = max(len(v) for v in benchmark_radii.values())
-    for k in range(max_levels):
-        disp = np.array([_normalize(benchmark_radii.get(b, [0,100])[
-                            min(k, len(benchmark_radii.get(b,[0,100]))-1)], b)
-                         for b in subtask_benchmarks])
-        ax.plot(angles_closed, np.append(disp, disp[0]),
-                color='k', lw=0.6, zorder=4)
+    # Shared normalized-preference rings; never connect raw tick indices.
+    for fraction in (0.25, 0.5, 0.75, 1.0):
+        radius = r_lo + (r_hi - r_lo) * fraction
+        ax.plot(angles_closed, np.full_like(angles_closed, radius),
+                color='k', lw=0.45, alpha=0.45, zorder=1)
 
     ax.set_yticks([r_hi])
     ax.set_yticklabels([])
@@ -88,22 +123,28 @@ def plot_radar(methods, colors, subtask_names, value_matrix,
     ax.set_xticklabels([])
 
     # Spoke labels (outside outer ring)
-    for angle, label in zip(angles, subtask_names):
-        r_label = r_hi + 8 + 10 * abs(np.sin(angle))
-        ax.text(angle, r_label, label, fontsize=14,
+    for angle, label, direction in zip(angles, subtask_names, directions):
+        r_label = r_hi + 0.08 + 0.04 * abs(np.sin(angle))
+        arrow = "↑" if direction == "higher" else "↓"
+        ax.text(angle, r_label, f"{label} {arrow}", fontsize=6,
                 ha='center', va='center',
                 transform=ax.transData, clip_on=False)
 
-    ax.legend(loc='upper right', bbox_to_anchor=(1.40, 0.05),
-              fontsize=15, frameon=False)
+    ax.set_title("Normalized preference (outer is better)", fontsize=7, pad=14)
+    ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.10),
+              ncol=min(n_methods, 3), fontsize=6, frameon=False)
     return fig, ax
 ```
 
 **Key settings:**
 - `ax.set_theta_zero_location('N')` — top-start convention
 - Remove all default spines/grid; draw custom spokes + contour polygons manually
-- Normalize each spoke independently using per-benchmark tick lists
-- Legend placed **outside** the plot at `bbox_to_anchor=(1.40, 0.05)`
+- Normalize each spoke using an explicit range and higher/lower direction; fail
+  on missing or out-of-range values rather than imputing or clipping
+- State in the legend that radius is normalized preference, not a shared raw unit
+- Use shared normalized-preference rings, not polygons joining equal raw tick
+  indices across different units or directions
+- Keep the method legend below the 89 mm plot so it does not expand its width
 
 ---
 
@@ -200,9 +241,9 @@ def make_scatter(ax, x, y, labels_or_colors,
 ## Probability + Manifold Concept Panel
 
 Use when a manuscript needs a conceptual mechanism panel that links a probability
-shift to a geometric or latent-space explanation. The bundled
-`figure_VIGIL/plot_concept.py` demo pairs a 1D probability-density panel with a
-contour/scatter manifold panel.
+shift to a geometric or latent-space explanation. The faithful VIGIL example
+combines a 1D probability-density panel with a contour/scatter manifold panel;
+inspect its registered output and source through `paper-pattern-catalog.md`.
 
 **Pattern:**
 - Left panel: draw 2-3 probability curves with transparent fills; use one vertical
@@ -227,9 +268,9 @@ fig.tight_layout(pad=0.5)
 ## Ablation Line Panel with Reference Baselines
 
 Use when an ablation compares data fraction, hyperparameters, or coupled metrics
-across a small set of methods. The bundled `figure_VIGIL/plot_ablation.py` demo
-uses three horizontal panels: data fraction, one hyperparameter sweep, and a
-dual-axis coupled metric sweep.
+across a small set of methods. The faithful gallery includes registered VIGIL
+and RNAGenScape ablation/sweep precedents; inspect their original outputs and
+registered sources before adaptation.
 
 **Pattern:**
 - Use a dashed horizontal baseline for the simple/reference model.

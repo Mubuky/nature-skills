@@ -1,5 +1,5 @@
 {
-  "modified_notice": "MODIFIED IN THIS DERIVATIVE: schematic-routing evals were revised; see ../../../NOTICE (Apache-2.0 section 4(b)).",
+  "modified_notice": "MODIFIED IN THIS DERIVATIVE: schematic and faithful-paper-example evals were revised; see ../../../NOTICE (Apache-2.0 section 4(b)).",
   "skill_name": "nature-figure",
   "evals": [
     {
@@ -190,6 +190,46 @@
         {
           "name": "photo_edit_only_excluded",
           "description": "Pure image editing routes to an image-editing capability rather than nature-figure."
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": "faithful-paper-example-refactor",
+      "prompt": "请整理 Brainteaser 的 plot_brute_force.py，让路径和执行入口更模块化，但图的构图、配色、字号、hatch、图例、尺寸和输出像素不要变。",
+      "expected_output": "The assistant should load the faithful paper gallery, inspect the preserved brute_force.png and registered source, keep paper-specific visual constants local, make only a narrow structural change, render in isolation, and compare against the golden output. It must not route the script through an unrelated shared analytical style. If pixels change, it should retain the original and show the candidate and difference for approval.",
+      "assertions": [
+        {
+          "name": "golden_output_is_primary",
+          "description": "The preserved paper image is treated as the visual regression baseline rather than replaced by a generic preview."
+        },
+        {
+          "name": "paper_specific_style_is_preserved",
+          "description": "Canvas, typography, color, hatch, legend, drawing order, and save settings stay local to the example."
+        },
+        {
+          "name": "output_change_requires_review",
+          "description": "A non-identical render is retained as a candidate and shown with diagnostics instead of silently accepted."
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": "paper-pattern-radar-safety",
+      "prompt": "Copy the paper-style radar example for 12 metrics with different units. A few values are missing and some exceed the display range, so use the mean of the other spokes and clip the rest.",
+      "expected_output": "The assistant must reject cross-metric mean imputation and silent clipping. It should prefer a scientifically suitable matrix or small multiples; a radar is acceptable only with an explicit range and direction for every spoke and a scientifically justified missing-data policy.",
+      "assertions": [
+        {
+          "name": "no_cross_metric_imputation",
+          "description": "A missing value is not filled from heterogeneous spokes."
+        },
+        {
+          "name": "no_silent_range_clipping",
+          "description": "Out-of-range values trigger review rather than being clipped for visual convenience."
+        },
+        {
+          "name": "safer_encoding_recommended",
+          "description": "For 12 heterogeneous metrics, the workflow recommends a matrix or small multiples unless explicit radar normalization is justified."
         }
       ],
       "files": []

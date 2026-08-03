@@ -32,9 +32,9 @@ Agent Skills。每个技能都是可独立安装的轻量路由器，详细规�
 | 指标 | 上游 | 本仓库 | 变化 |
 |---|---:|---:|---:|
 | 对应最终 11 个技能名称的触发描述总字符 | 7,612 | 5,182 | -32% |
-| 对应最终 11 个技能名称的 `SKILL.md` 总行数 | 1,479 | 871 | -41% |
+| 对应最终 11 个技能名称的 `SKILL.md` 总行数 | 1,479 | 888 | -40% |
 | `nature-downloader/SKILL.md` | 623 行 | 78 行 | -87% |
-| `nature-figure` 目录 | 约 34 MB | 约 5.8 MB | 移除无明确许可证的第三方快照 |
+| `nature-figure` 真实论文绘图实践 | 第三方项目快照 | 8 个项目族、24 个绘图入口、42 个原始产物 | 保真整理并建立回归基线 |
 
 同时完成：
 
@@ -46,6 +46,10 @@ Agent Skills。每个技能都是可独立安装的轻量路由器，详细规�
 - 写作/润色、预审/回复、检索/配引文/书目核验等相邻边界显式化；
 - 下载器不再尝试自动绕过 CAPTCHA、滑块、OTP 或访问控制；
 - 图表后端优先从项目上下文推断，仅在选择会实质影响实现时询问；
+- 图表技能保留并整理 8 个真实论文项目族的完整 Python 样例与原始输出，按需加载；
+  原图作为不可变视觉基线，原有 volcano/ROC/dotplot/marginal/paired 分析工具保持独立；
+- 为样例来源、输出哈希、隔离运行和图像差异加入回归检查；有争议的原样例先保留，
+  输出发生变化的修复必须通过前后对照确认；
 - 技能自包含，不依赖必须同时安装的跨目录 `nature-shared`。
 
 完整设计见 [上下文工程说明](docs/context-engineering.md)。
@@ -128,11 +132,13 @@ python3 scripts/validate_trigger_cases.py
 python3 scripts/validate-repository.py
 python3 scripts/validate-skill-metadata.py
 python3 scripts/validate-workflows.py
+python3 skills/nature-figure/scripts/check_paper_gallery.py
 bash -n scripts/update-codex-skills.sh
 python3 scripts/test_update_codex_skills.py
 python3 -m unittest discover -s skills/nature-citation/tests -p 'test_*.py'
 python3 -m unittest discover -s skills/nature-paper-to-patent/tests -p 'test_*.py'
 python3 -m unittest discover -s skills/nature-downloader/tests/python -p 'test_*.py'
+python3 -m unittest discover -s skills/nature-figure/tests -p 'test_*.py'
 node --test skills/nature-downloader/tests/unit/*.test.mjs
 python3 skills/nature-figure/scripts/validate_figure.py --self-test
 ```
@@ -149,5 +155,10 @@ python3 skills/nature-figure/scripts/validate_figure.py --self-test
 署名文件。来源 commit、独立派生关系、修改范围和第三方素材处理见
 [NOTICE](NOTICE)。
 
-本仓库不重新分发上游曾打包的 `figures4papers` 快照，因为该快照中未发现对应
-许可证。公开可见不等于允许再分发。
+`nature-figure` 的真实论文绘图样例整理自
+[`ChenLiu-1996/figures4papers`](https://github.com/ChenLiu-1996/figures4papers)
+（revision `6e9ca1200f4b1445cff68a42be76f7712ec2d4e1`）。感谢 Chen Liu
+公开这些论文绘图实践。本仓库按 skill 的 `assets/scripts/references` 结构保存
+25 个 Python 源文件、29 张 Python 输出 PNG、3 张配套 PDF 与 10 张 hybrid
+参考图；不复制原项目的仓库外壳。42 个上游产物始终作为不可覆盖的基线；经用户
+确认的窄幅代码修复记录上游与当前哈希，优化成图另存于 `optimized/`。

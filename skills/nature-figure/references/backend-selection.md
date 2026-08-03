@@ -9,11 +9,14 @@ Prefer continuity with the user's project.
 | Existing R/RDS/Seurat/DESeq2 workflow | Existing Python/NumPy/Pandas/ML workflow |
 | ggplot2, patchwork, ComplexHeatmap, ggtree, survival ecosystem | Custom low-level layout, image plates, overlays, simulation, Matplotlib ecosystem |
 | Team-maintained R templates or downstream R analysis | Team-maintained notebooks/packages or downstream Python analysis |
+| | A semantic match to a faithful bundled paper example or maintained analytical CSV template |
 
 Both can produce publication-grade output. If either is equally suitable, use
-the saved preference; if none exists and integration is unaffected, recommend
-the simpler fit and proceed. Ask only when the choice has a material tradeoff
-the user must decide.
+the saved preference. If none exists and integration is unaffected, prefer
+Python when a faithful example or maintained template matches; otherwise
+recommend the simpler fit and proceed. A paper example keeps its own visual
+settings and is not routed through a generic theme. Ask only when the choice has
+a material tradeoff the user must decide.
 
 Persist the selected backend only when the user explicitly asks to make it the
 future default. Once chosen, keep plotting, layout decisions, preview

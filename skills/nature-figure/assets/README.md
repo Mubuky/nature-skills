@@ -1,5 +1,7 @@
 # Bundled figure-example provenance
 
+## Adopted chart atlas and synthetic gallery
+
 The 15 PNG files in `chart-atlas/` and `gallery/` are copied byte-for-byte from
 the adopted upstream snapshot:
 
@@ -8,17 +10,41 @@ the adopted upstream snapshot:
 - upstream paths: `skills/nature-figure/assets/chart-atlas/` and
   `skills/nature-figure/assets/gallery/`
 
-They were committed under the upstream repository's root Apache License 2.0,
-which is retained at this repository's root. The adopted snapshot supplied no
-separate per-file author or licence notice for these PNGs. This distribution
-therefore does not claim that its maintainers created them and does not infer
-additional rights beyond the upstream root licence. They are visual or
-structural examples, not experimental observations or source data.
+They are visual or structural examples, not experimental observations or
+source data.
 
-The separate upstream `figures4papers/` snapshot is intentionally not
-redistributed; see the root `NOTICE`.
+## Faithful paper gallery
 
-## SHA-256 inventory
+`paper-patterns/` contains the complete curated output set from
+<https://github.com/ChenLiu-1996/figures4papers> at revision
+`6e9ca1200f4b1445cff68a42be76f7712ec2d4e1`:
+
+- `python/`: 29 original Python-rendered PNGs and three companion PDFs from
+  eight project families;
+- `hybrid/`: ten original paper composites that were only partly made in
+  Python;
+- `optimized/`: three user-approved derived outputs (deterministic Cflows,
+  deduplicated VIGIL ablation, and repaired Ophthal timeline), kept separate
+  from the upstream golden files;
+- `manifest.json`: source paths, registered scripts, dimensions, DPI metadata,
+  SHA-256 hashes, and provenance.
+
+The associated 25 Python files are organized under `../scripts/paper_examples/`.
+All 42 upstream outputs remain byte-for-byte copies. Selected source files are
+now narrowly curated; each such manifest record keeps both the current hash and
+the upstream hash. Verify upstream outputs, current sources, and approved
+optimized variants with:
+
+```bash
+python3 "$SKILL_DIR/scripts/check_paper_gallery.py"
+```
+
+Treat these outputs as immutable visual golden references. Do not regenerate
+them through an unrelated analytical template, silently accept a changed render, or delete
+a sample because its code or scientific convention needs review. Put proposed
+repairs in a separate output path and compare them first.
+
+## SHA-256 inventory for adopted atlas/gallery
 
 ```text
 4a0e3040bbdbfe5ec48b66515f719f83ad7304fadb2e56432cd3e8f7ccbabd65  chart-atlas/atlas-01-bar-charts.png

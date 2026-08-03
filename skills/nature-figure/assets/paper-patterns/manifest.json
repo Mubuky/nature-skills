@@ -1,0 +1,822 @@
+{
+  "source_repository": "https://github.com/ChenLiu-1996/figures4papers",
+  "source_revision": "6e9ca1200f4b1445cff68a42be76f7712ec2d4e1",
+  "policy": "Preserve upstream visual outputs byte-for-byte as golden references. Curated source files retain their upstream SHA-256 alongside the current SHA-256; approved optimized outputs use a separate optimized/ path.",
+  "entries": [
+    {
+      "path": "assets/paper-patterns/hybrid/Dispersion_motivation.png",
+      "source_path": "assets/Dispersion_motivation.png",
+      "source_script": null,
+      "example": null,
+      "mode": "hybrid-reference",
+      "sha256": "04c2f6ab2bedf8e6a19449f0260ef36f8ab736a93dccf19458cdc80d4b593547",
+      "width": 4400,
+      "height": 1503,
+      "dpi": [
+        329.997,
+        329.997
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/hybrid/Dispersion_observation.png",
+      "source_path": "assets/Dispersion_observation.png",
+      "source_script": null,
+      "example": null,
+      "mode": "hybrid-reference",
+      "sha256": "59846b700abcf89c2779abce27b5d667637f6429cf4a52ca1892c687359f2aa7",
+      "width": 2928,
+      "height": 1012,
+      "dpi": [
+        143.993,
+        143.993
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/hybrid/Dispersion_observation_distillation.png",
+      "source_path": "assets/Dispersion_observation_distillation.png",
+      "source_script": null,
+      "example": null,
+      "mode": "hybrid-reference",
+      "sha256": "134b0fcb07dbab1baa769854100fc9791b846f6f6c50591485564fc8492b6660",
+      "width": 2864,
+      "height": 880,
+      "dpi": [
+        143.993,
+        143.993
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/hybrid/ImmunoStruct_contrastive.png",
+      "source_path": "assets/ImmunoStruct_contrastive.png",
+      "source_script": null,
+      "example": null,
+      "mode": "hybrid-reference",
+      "sha256": "c2590ba1ecac5e1d0976df3be6e9fa4056dcdd78670201c6db461e3e4f18b0d0",
+      "width": 2088,
+      "height": 1096,
+      "dpi": [
+        143.993,
+        143.993
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/hybrid/ImmunoStruct_results_CEDAR.png",
+      "source_path": "assets/ImmunoStruct_results_CEDAR.png",
+      "source_script": null,
+      "example": null,
+      "mode": "hybrid-reference",
+      "sha256": "f1f564e0c7221f24f4bffe14cce5b5df6786c75f7dfcf1b6d2be7566820050ec",
+      "width": 2124,
+      "height": 1588,
+      "dpi": [
+        143.993,
+        143.993
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/hybrid/ImmunoStruct_results_IEDB.png",
+      "source_path": "assets/ImmunoStruct_results_IEDB.png",
+      "source_script": null,
+      "example": null,
+      "mode": "hybrid-reference",
+      "sha256": "2768b1a5ef0c501dc03c53c594a28e028df2cd57b51c4fd80c9a57906f6195c5",
+      "width": 1950,
+      "height": 1582,
+      "dpi": [
+        143.993,
+        143.993
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/hybrid/ImmunoStruct_schematic.png",
+      "source_path": "assets/ImmunoStruct_schematic.png",
+      "source_script": null,
+      "example": null,
+      "mode": "hybrid-reference",
+      "sha256": "2d3ddf56ae63b34ead168cb95b484881f934e61204a8740c67d6dc1678bbaf7d",
+      "width": 2568,
+      "height": 1450,
+      "dpi": [
+        143.993,
+        143.993
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/hybrid/RNAGenScape_schematic.png",
+      "source_path": "assets/RNAGenScape_schematic.png",
+      "source_script": null,
+      "example": null,
+      "mode": "hybrid-reference",
+      "sha256": "5da6979582203956d3f54535ea8286acaaaaba5d588066891ee037de056ed545",
+      "width": 3130,
+      "height": 1300,
+      "dpi": [
+        143.993,
+        143.993
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/hybrid/RNAGenScape_teaser.png",
+      "source_path": "assets/RNAGenScape_teaser.png",
+      "source_script": null,
+      "example": null,
+      "mode": "hybrid-reference",
+      "sha256": "51a173abeafd0125204b604424ec869262c94f99ab1b004e6aed4d9b889a66e2",
+      "width": 2902,
+      "height": 788,
+      "dpi": [
+        143.993,
+        143.993
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/hybrid/VIGIL_teaser.png",
+      "source_path": "assets/VIGIL_teaser.png",
+      "source_script": null,
+      "example": null,
+      "mode": "hybrid-reference",
+      "sha256": "61493276c48d90f05a8d0f48ed398a9ad2b95a80bf8c028f1d68bb9495d06ee8",
+      "width": 10628,
+      "height": 4844,
+      "dpi": [
+        329.997,
+        329.997
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/brainteaser/brute_force.png",
+      "source_path": "figure_Brainteaser/figures/brute_force.png",
+      "source_script": "scripts/paper_examples/brainteaser/plot_brute_force.py",
+      "example": "brainteaser-brute-force",
+      "mode": "python-output",
+      "sha256": "abb63055b0d49edbe9002e820294a622db1429d31b1d2446340036cf1db92607",
+      "width": 15600,
+      "height": 3600,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/brainteaser/correctness_by_category.png",
+      "source_path": "figure_Brainteaser/figures/correctness_by_category.png",
+      "source_script": "scripts/paper_examples/brainteaser/plot_correctness_by_category.py",
+      "example": "brainteaser-correctness-category",
+      "mode": "python-output",
+      "sha256": "bc2cc547f15430bc9af2ebdfba0b8cf1c73702e8fbea35d8b2953cc960da117b",
+      "width": 10800,
+      "height": 3600,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/brainteaser/correctness_by_subcategory.png",
+      "source_path": "figure_Brainteaser/figures/correctness_by_subcategory.png",
+      "source_script": "scripts/paper_examples/brainteaser/plot_correctness_by_subcategory.py",
+      "example": "brainteaser-correctness-subcategory",
+      "mode": "python-output",
+      "sha256": "b6639239da2fa9f2bec3eb096ec0db3942965ed38e57446de4b8a240a77c02c6",
+      "width": 28800,
+      "height": 3600,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/brainteaser/rewriting.png",
+      "source_path": "figure_Brainteaser/figures/rewriting.png",
+      "source_script": "scripts/paper_examples/brainteaser/plot_rewriting.py",
+      "example": "brainteaser-rewriting",
+      "mode": "python-output",
+      "sha256": "0460f09210bc23c272602ecb8b3fcf3984f42fc055df3b0e4982eab50303607f",
+      "width": 7200,
+      "height": 3600,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/brainteaser/selfcorrection_math.png",
+      "source_path": "figure_Brainteaser/figures/selfcorrection_math.png",
+      "source_script": "scripts/paper_examples/brainteaser/plot_selfcorrection_math.py",
+      "example": "brainteaser-self-correction",
+      "mode": "python-output",
+      "sha256": "71133ed59cc16f8c36a4e8b2325575d185f36a8534c29579d2eff177544e9e53",
+      "width": 10800,
+      "height": 3600,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/cellsplicenet/ablation.png",
+      "source_path": "figure_CellSpliceNet/figures/ablation.png",
+      "source_script": "scripts/paper_examples/cellsplicenet/plot_ablation.py",
+      "example": "cellsplicenet-ablation",
+      "mode": "python-output",
+      "sha256": "3373085ababf07481a352fe542fd79a58701e0e052c5593ca56984008ddad027",
+      "width": 3900,
+      "height": 3900,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/cellsplicenet/comparison_human.png",
+      "source_path": "figure_CellSpliceNet/figures/comparison_human.png",
+      "source_script": "scripts/paper_examples/cellsplicenet/plot_comparison.py",
+      "example": "cellsplicenet-comparison",
+      "mode": "python-output",
+      "sha256": "131654637e894c12f441ad4a9cf5533999939971e3f051f81e46ba802f75d854",
+      "width": 13500,
+      "height": 3600,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/cellsplicenet/comparison_worm.png",
+      "source_path": "figure_CellSpliceNet/figures/comparison_worm.png",
+      "source_script": "scripts/paper_examples/cellsplicenet/plot_comparison.py",
+      "example": "cellsplicenet-comparison",
+      "mode": "python-output",
+      "sha256": "137841e62d5eaa48998a97246849b8ede08d2d165c8bb4ad3fd6a18d6b6c65e2",
+      "width": 13500,
+      "height": 3600,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/cflows/diffusion_swiss_roll.png",
+      "source_path": "figure_Cflows/figures/diffusion_swiss_roll.png",
+      "source_script": "scripts/paper_examples/cflows/diffusion_swiss_roll.py",
+      "example": "cflows-diffusion-swiss-roll",
+      "mode": "python-output",
+      "sha256": "9f02fa4603dae748e3745b95b0ed252f2ba386da6101dc1be6c4a2a886c78eb0",
+      "width": 5313,
+      "height": 3000,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/optimized/cflows/diffusion_swiss_roll.png",
+      "source_path": null,
+      "source_script": "scripts/paper_examples/cflows/diffusion_swiss_roll.py",
+      "example": "cflows-diffusion-swiss-roll",
+      "mode": "optimized-output",
+      "baseline_path": "assets/paper-patterns/python/cflows/diffusion_swiss_roll.png",
+      "optimization": "Fix RandomState seed at 42, create the output directory, and replace repeated inverse-index searches while retaining drawing order.",
+      "sha256": "63f7fbb7937cea35897e8ded67e107ff1823b7d32709bb3f20d575e7dd8a03b4",
+      "width": 5280,
+      "height": 3000,
+      "dpi": [
+        299.999,
+        299.999
+      ],
+      "seed": 42,
+      "verification": {
+        "two_independent_renders_exact": true,
+        "upstream_algorithm_with_same_seed_exact": true
+      }
+    },
+    {
+      "path": "assets/paper-patterns/python/cflows/fig2_comparison_GeneRegulatory.pdf",
+      "source_path": "figure_Cflows/figures/fig2_comparison_GeneRegulatory.pdf",
+      "source_script": "scripts/paper_examples/cflows/plot_comparison_GeneRegulatory.py",
+      "example": "cflows-comparison-gene-regulatory",
+      "mode": "python-output",
+      "sha256": "30b1efaf3293a240c6646f076a14f702bb3556fd10a1fb791c23deb90d3ff40e"
+    },
+    {
+      "path": "assets/paper-patterns/python/cflows/fig2_comparison_GeneRegulatory.png",
+      "source_path": "figure_Cflows/figures/fig2_comparison_GeneRegulatory.png",
+      "source_script": "scripts/paper_examples/cflows/plot_comparison_GeneRegulatory.py",
+      "example": "cflows-comparison-gene-regulatory",
+      "mode": "python-output",
+      "sha256": "96075eb70285f4f72869b99398c9a923336fbc3a5188883d9e8415e1cc027a46",
+      "width": 10800,
+      "height": 1800,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/cflows/fig2_comparison_Trajectory.pdf",
+      "source_path": "figure_Cflows/figures/fig2_comparison_Trajectory.pdf",
+      "source_script": "scripts/paper_examples/cflows/plot_comparison_Trajectory.py",
+      "example": "cflows-comparison-trajectory",
+      "mode": "python-output",
+      "sha256": "465050a8f8c8be85eb3e8d17c16eaef3df50acc41b2bd212d2b6176d97efc78c"
+    },
+    {
+      "path": "assets/paper-patterns/python/cflows/fig2_comparison_Trajectory.png",
+      "source_path": "figure_Cflows/figures/fig2_comparison_Trajectory.png",
+      "source_script": "scripts/paper_examples/cflows/plot_comparison_Trajectory.py",
+      "example": "cflows-comparison-trajectory",
+      "mode": "python-output",
+      "sha256": "91b214f745a99f1f2b472ddae7661dfa2d9241791768767180219315b89047ec",
+      "width": 10800,
+      "height": 1800,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/cflows/figX_comparison_Ablation.pdf",
+      "source_path": "figure_Cflows/figures/figX_comparison_Ablation.pdf",
+      "source_script": "scripts/paper_examples/cflows/plot_comparison_Ablation.py",
+      "example": "cflows-comparison-ablation",
+      "mode": "python-output",
+      "sha256": "d4c7b8013a24aa830a0f83b8cf5ffd917a932458e6a265f4b5f29e9a4389960a"
+    },
+    {
+      "path": "assets/paper-patterns/python/cflows/figX_comparison_Ablation.png",
+      "source_path": "figure_Cflows/figures/figX_comparison_Ablation.png",
+      "source_script": "scripts/paper_examples/cflows/plot_comparison_Ablation.py",
+      "example": "cflows-comparison-ablation",
+      "mode": "python-output",
+      "sha256": "4f7b7b4b01a1b498540850ddabc217fd964eb37142e99a6ee6b5c26cf12aba7f",
+      "width": 10500,
+      "height": 2100,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/dispersion/idea.png",
+      "source_path": "figure_Dispersion/figures/idea.png",
+      "source_script": "scripts/paper_examples/dispersion/plot_idea.py",
+      "example": "dispersion-idea",
+      "mode": "python-output",
+      "sha256": "e805fb0f7ccdf8aa3ae764e8156cf6b61b6d56ef7dded0fc7556566e316649a3",
+      "width": 5400,
+      "height": 1800,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/dispersion/illustration.png",
+      "source_path": "figure_Dispersion/figures/illustration.png",
+      "source_script": "scripts/paper_examples/dispersion/plot_illustration.py",
+      "example": "dispersion-illustration",
+      "mode": "python-output",
+      "sha256": "2528309a41ba6edab9c377a2304c144813c0e99565239a849c427ab00a14643b",
+      "width": 7200,
+      "height": 2400,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/immunostruct/bars_ablation_Cancer.png",
+      "source_path": "figure_ImmunoStruct/figures/bars_ablation_Cancer.png",
+      "source_script": "scripts/paper_examples/immunostruct/plot_bars.py",
+      "example": "immunostruct-bars",
+      "mode": "python-output",
+      "sha256": "46c9e05df9d7c941628791ac447c5d84a29d942896ce3a13d00432e9f5c720ef",
+      "width": 16800,
+      "height": 3600,
+      "dpi": [
+        599.999,
+        599.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/immunostruct/bars_ablation_IEDB.png",
+      "source_path": "figure_ImmunoStruct/figures/bars_ablation_IEDB.png",
+      "source_script": "scripts/paper_examples/immunostruct/plot_bars.py",
+      "example": "immunostruct-bars",
+      "mode": "python-output",
+      "sha256": "854fe931bde6ca6c50eda6b147907f00d8f10d74c3b40bad1714b903bf945f00",
+      "width": 14400,
+      "height": 4800,
+      "dpi": [
+        599.999,
+        599.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/immunostruct/bars_comparison_Cancer.png",
+      "source_path": "figure_ImmunoStruct/figures/bars_comparison_Cancer.png",
+      "source_script": "scripts/paper_examples/immunostruct/plot_bars.py",
+      "example": "immunostruct-bars",
+      "mode": "python-output",
+      "sha256": "0c35bb8a1fb21d5e30e16be152fc92959af580d9e24f04ccc61444adba8c7aa2",
+      "width": 16800,
+      "height": 3600,
+      "dpi": [
+        599.999,
+        599.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/immunostruct/bars_comparison_IEDB.png",
+      "source_path": "figure_ImmunoStruct/figures/bars_comparison_IEDB.png",
+      "source_script": "scripts/paper_examples/immunostruct/plot_bars.py",
+      "example": "immunostruct-bars",
+      "mode": "python-output",
+      "sha256": "18a52f7a910fe9c9ff06015f5a1e63527458a86c847f573eb96ba254d4645ac1",
+      "width": 16800,
+      "height": 3600,
+      "dpi": [
+        599.999,
+        599.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/ophthal-review/composition_heatmap.png",
+      "source_path": "figure_ophthal_review/figures/composition_heatmap.png",
+      "source_script": "scripts/paper_examples/ophthal_review/plot_composition.py",
+      "example": "ophthal-composition",
+      "mode": "python-output",
+      "sha256": "38a9c4e8fd691cbd7dcb4f5b5abb69398b4974d32cad19a4a33819db1cb34f3a",
+      "width": 4200,
+      "height": 3000,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/ophthal-review/trend_by_month.png",
+      "source_path": "figure_ophthal_review/figures/trend_by_month.png",
+      "source_script": "scripts/paper_examples/ophthal_review/plot_trend.py",
+      "example": "ophthal-trend",
+      "mode": "python-output",
+      "sha256": "66fe0f27f44697547b6cb219ff90696f54a6fef48984c9578ace258e0ebce4d4",
+      "width": 4200,
+      "height": 2400,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/optimized/ophthal-review/trend_by_month.png",
+      "source_path": null,
+      "source_script": "scripts/paper_examples/ophthal_review/plot_trend.py",
+      "example": "ophthal-trend",
+      "mode": "optimized-output",
+      "baseline_path": "assets/paper-patterns/python/ophthal-review/trend_by_month.png",
+      "optimization": "Retain both 2023-02 events with Bard vertically staggered above LlaMA 1, and normalize the GPT-4v event key to 2023-09; preserve every other visual element.",
+      "sha256": "7165bf152064f322266c64ed8384b246a8eb064f18af50f9eb062cd6ed42d919",
+      "width": 4200,
+      "height": 2400,
+      "dpi": [
+        299.999,
+        299.999
+      ],
+      "render_environment": {
+        "matplotlib": "3.10.8",
+        "latex": "MiKTeX-pdfTeX 4.23 (MiKTeX 25.12)",
+        "dvipng": "1.18",
+        "font_package": "helvet",
+        "tex_packages": [
+          "psnfss",
+          "type1cm",
+          "cm-super",
+          "geometry",
+          "underscore",
+          "ltxbase"
+        ]
+      },
+      "verification": {
+        "two_independent_renders_exact": true,
+        "same_environment_reference": {
+          "kind": "upstream-source-rerender",
+          "source_revision": "6e9ca1200f4b1445cff68a42be76f7712ec2d4e1",
+          "source_path": "figure_ophthal_review/plot_trend.py",
+          "source_sha256": "41232f15306ed83081ae695da341c6d78e74dcefd46b32b3f313245dde15db98",
+          "render_sha256": "84e5a64ca2feb7ba3c60cc0454ab772a74dbb63b781d71bfce6f69a1397c96f1",
+          "stored_in_repository": false,
+          "baseline_path_role": "Preserved upstream golden for provenance only; controlled localized pixel verification uses this same-environment upstream-source rerender."
+        },
+        "same_environment_changed_pixels": 5063,
+        "same_environment_changed_pixel_fraction": 0.0005022817460317461,
+        "same_environment_changed_outside_expected_annotation_regions": 0,
+        "expected_annotation_regions_xyxy": [
+          [
+            870,
+            790,
+            980,
+            1075
+          ],
+          [
+            1560,
+            1870,
+            1730,
+            2010
+          ]
+        ]
+      }
+    },
+    {
+      "path": "assets/paper-patterns/python/rnagenscape/manifold.png",
+      "source_path": "figure_RNAGenScape/figures/manifold.png",
+      "source_script": "scripts/paper_examples/rnagenscape/plot_manifold.py",
+      "example": "rnagenscape-manifold",
+      "mode": "python-output",
+      "sha256": "83e55ca23d8aa2fa591a46d3fe4f9d6ac11e17cbc9657e2615d883ea6deb937c",
+      "width": 1000,
+      "height": 700,
+      "dpi": [
+        100.0,
+        100.0
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/rnagenscape/manifold_holes.png",
+      "source_path": "figure_RNAGenScape/figures/manifold_holes.png",
+      "source_script": "scripts/paper_examples/rnagenscape/plot_hole_manifold.py",
+      "example": "rnagenscape-hole-manifold",
+      "mode": "python-output",
+      "sha256": "2ad2be6fa9c9165e800dba4d997850c9a426cbe9b441c78b76518335bcc3f948",
+      "width": 4200,
+      "height": 1800,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/rnagenscape/results_comparison_optimization.png",
+      "source_path": "figure_RNAGenScape/figures/results_comparison_optimization.png",
+      "source_script": "scripts/paper_examples/rnagenscape/plot_comparison.py",
+      "example": "rnagenscape-comparison",
+      "mode": "python-output",
+      "sha256": "4cf8539d0521b7268f0227b56cecddf2f70c1bb4bbcf9b5e3be886e95a54927a",
+      "width": 6000,
+      "height": 2700,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/rnagenscape/results_comparison_speed.png",
+      "source_path": "figure_RNAGenScape/figures/results_comparison_speed.png",
+      "source_script": "scripts/paper_examples/rnagenscape/plot_comparison.py",
+      "example": "rnagenscape-comparison",
+      "mode": "python-output",
+      "sha256": "cd1fec84f615a43dbe91cc94bfbb94fe07e086fdd5d8191fbff2ec990e38d4f5",
+      "width": 2700,
+      "height": 1500,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/rnagenscape/results_sweep.png",
+      "source_path": "figure_RNAGenScape/figures/results_sweep.png",
+      "source_script": "scripts/paper_examples/rnagenscape/plot_sweep.py",
+      "example": "rnagenscape-sweep",
+      "mode": "python-output",
+      "sha256": "4db30b32b65e6b7160ebe025993c2ffdaf6e240d836c253419e91649d3da8deb",
+      "width": 2700,
+      "height": 1200,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/vigil/ablation_curves.png",
+      "source_path": "figure_VIGIL/figures/ablation_curves.png",
+      "source_script": "scripts/paper_examples/vigil/plot_ablation.py",
+      "example": "vigil-ablation",
+      "mode": "python-output",
+      "sha256": "302b8f53795653bf7ebe74ca508319c073325bdda1f106ca9eb3cd7c690da7c7",
+      "width": 8100,
+      "height": 1800,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/optimized/vigil/ablation_curves.png",
+      "source_path": null,
+      "source_script": "scripts/paper_examples/vigil/plot_ablation.py",
+      "example": "vigil-ablation",
+      "mode": "optimized-output",
+      "baseline_path": "assets/paper-patterns/python/vigil/ablation_curves.png",
+      "optimization": "Remove the duplicate MathVista plot call and its duplicate legend entry; retain the explicit linewidth and all data, layout, colors, labels, and export dimensions.",
+      "sha256": "49b7e43668ec6a12651ce4dc69a2fb1a672d0477955f32e66a823604a65a7eb7",
+      "width": 8100,
+      "height": 1800,
+      "dpi": [
+        299.999,
+        299.999
+      ],
+      "render_environment": {
+        "matplotlib": "3.10.8",
+        "freetype": "2.6.1",
+        "requested_font": "Helvetica",
+        "resolved_font": "DejaVu Sans fallback"
+      },
+      "verification": {
+        "two_independent_renders_exact": true,
+        "controlled_before_after_changed_pixel_fraction": 0.0014791495198902605,
+        "controlled_before_after_mae": 0.0007696520885446085,
+        "upstream_golden_comparison_is_environment_confounded": true
+      }
+    },
+    {
+      "path": "assets/paper-patterns/python/vigil/comparison_posttraining.png",
+      "source_path": "figure_VIGIL/figures/comparison_posttraining.png",
+      "source_script": "scripts/paper_examples/vigil/plot_posttraining.py",
+      "example": "vigil-posttraining",
+      "mode": "python-output",
+      "sha256": "a6f2e75e7d8361754445d86ce04386b5764a46bf2cbc94e8df0c75ecf1bab142",
+      "width": 2700,
+      "height": 2400,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/vigil/comparison_radar.png",
+      "source_path": "figure_VIGIL/figures/comparison_radar.png",
+      "source_script": "scripts/paper_examples/vigil/plot_comparison_radar.py",
+      "example": "vigil-radar",
+      "mode": "python-output",
+      "sha256": "d6613715d9d4564fb0c7354430b227d43c9df04032e32b346601971381e5ba2d",
+      "width": 3560,
+      "height": 2550,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    },
+    {
+      "path": "assets/paper-patterns/python/vigil/concept.png",
+      "source_path": "figure_VIGIL/figures/concept.png",
+      "source_script": "scripts/paper_examples/vigil/plot_concept.py",
+      "example": "vigil-concept",
+      "mode": "python-output",
+      "sha256": "3554b9af671886dfbbe985016440c5ba1633b4e8b08d50539d992982c5cc2bf5",
+      "width": 7200,
+      "height": 1800,
+      "dpi": [
+        299.999,
+        299.999
+      ]
+    }
+  ],
+  "source_files": [
+    {
+      "path": "scripts/paper_examples/brainteaser/plot_brute_force.py",
+      "source_path": "figure_Brainteaser/plot_brute_force.py",
+      "sha256": "99f285d252b45ca6fcc1e4458bc74df334b251f1d7b9f96168a63020f73386a0"
+    },
+    {
+      "path": "scripts/paper_examples/brainteaser/plot_correctness_by_category.py",
+      "source_path": "figure_Brainteaser/plot_correctness_by_category.py",
+      "sha256": "6b276da17edd8a715aae1e11792967cf0de118b9718ec015ac277c591b3a9eb3"
+    },
+    {
+      "path": "scripts/paper_examples/brainteaser/plot_correctness_by_subcategory.py",
+      "source_path": "figure_Brainteaser/plot_correctness_by_subcategory.py",
+      "sha256": "4c8a8ac067ae410132bd45991916b909168355fa23e914d833568473283019eb"
+    },
+    {
+      "path": "scripts/paper_examples/brainteaser/plot_rewriting.py",
+      "source_path": "figure_Brainteaser/plot_rewriting.py",
+      "sha256": "5a3e768f34d3212f80e9a08d3f22529df78346a8fceb430bc9a37bdef9efc020"
+    },
+    {
+      "path": "scripts/paper_examples/brainteaser/plot_selfcorrection_math.py",
+      "source_path": "figure_Brainteaser/plot_selfcorrection_math.py",
+      "sha256": "b22f1ac50b5f4d31efe172c8a3cf4798d51cf84bbea950bb28332a4f620e73eb"
+    },
+    {
+      "path": "scripts/paper_examples/cellsplicenet/plot_ablation.py",
+      "source_path": "figure_CellSpliceNet/plot_ablation.py",
+      "sha256": "507d1e6c6531e335e39608c4d6191eae3cbba539459924f1de4ed457443eae0f"
+    },
+    {
+      "path": "scripts/paper_examples/cellsplicenet/plot_comparison.py",
+      "source_path": "figure_CellSpliceNet/plot_comparison.py",
+      "sha256": "3def900bf87bec30174fa71119158c03ce19390191a0fbd9990388ab95edd5b8"
+    },
+    {
+      "path": "scripts/paper_examples/cflows/diffusion_swiss_roll.py",
+      "source_path": "figure_Cflows/diffusion_swiss_roll.py",
+      "sha256": "c36f0fcb8f51add542dcfbffadf8be7e421664fe096b6ec23cf1342248dccc6d",
+      "upstream_sha256": "5566756d073cd7ecaa9cdc5ff885ba9affd8416251f190a4cf8c0e80e6e8d51d",
+      "curation": "Fixed seed 42, output-directory creation, function boundary, and O(1) inverse index lookup; drawing order is unchanged."
+    },
+    {
+      "path": "scripts/paper_examples/cflows/plot_comparison_Ablation.py",
+      "source_path": "figure_Cflows/plot_comparison_Ablation.py",
+      "sha256": "4b071ac77be68def7acd8a5b1b73e5384659ae6293c39ee24c6a778173651ea8"
+    },
+    {
+      "path": "scripts/paper_examples/cflows/plot_comparison_GeneRegulatory.py",
+      "source_path": "figure_Cflows/plot_comparison_GeneRegulatory.py",
+      "sha256": "1f260fbb6eca33c7f20ab8ca61e5119cb78e39acebb0b364a3eaa3b914b23836"
+    },
+    {
+      "path": "scripts/paper_examples/cflows/plot_comparison_Trajectory.py",
+      "source_path": "figure_Cflows/plot_comparison_Trajectory.py",
+      "sha256": "d6a81cb5ea7c0db80b42ede01ab5c06fc61ae1993e6f7d7078b851337fca8ac9"
+    },
+    {
+      "path": "scripts/paper_examples/dispersion/plot_idea.py",
+      "source_path": "figure_Dispersion/plot_idea.py",
+      "sha256": "77974b680f87fcb237f92526c4bccc031a93cdf5cc9cbe234d97a4a58cc80789"
+    },
+    {
+      "path": "scripts/paper_examples/dispersion/plot_illustration.py",
+      "source_path": "figure_Dispersion/plot_illustration.py",
+      "sha256": "6742ee93ecd484a0dbe1babe59a2cac5b050e099553d397cb2108cab4685e2e4"
+    },
+    {
+      "path": "scripts/paper_examples/immunostruct/plot_bars.py",
+      "source_path": "figure_ImmunoStruct/plot_bars.py",
+      "sha256": "dbadcf5bc12575eb8dd199b69082587017deebb6daf3502710081f41f6287831",
+      "upstream_sha256": "820acbc976b88cc713908a4fa0c8f57ad63a9a05478224dcde80048c71b753ea",
+      "curation": "Consume the neutrally named uncertainty arrays without changing any plotted values."
+    },
+    {
+      "path": "scripts/paper_examples/immunostruct/raw_data.py",
+      "source_path": "figure_ImmunoStruct/raw_data.py",
+      "sha256": "af6d2136ad8bb5633f51741b36ee2d58cf11be36ac74386073cd1902c8ecfcda",
+      "upstream_sha256": "5204c9833b29883872bdfc15f5168b548b67a29e1de9bdae2f0a887be5889d62",
+      "curation": "Rename std to uncertainty because the source does not establish SD or SEM; preserve every numeric value and the Mean PPVn /sqrt(5) transformation."
+    },
+    {
+      "path": "scripts/paper_examples/ophthal_review/plot_composition.py",
+      "source_path": "figure_ophthal_review/plot_composition.py",
+      "sha256": "b3d5f55eebfee6b8cfb6748e1eb0a150e926b4a4f918a960a9b9421513514aad"
+    },
+    {
+      "path": "scripts/paper_examples/ophthal_review/plot_trend.py",
+      "source_path": "figure_ophthal_review/plot_trend.py",
+      "sha256": "b73d92381c15079ed04d7e826369b08cb71e7edbdcffe1d683f53b497a030db2",
+      "upstream_sha256": "41232f15306ed83081ae695da341c6d78e74dcefd46b32b3f313245dde15db98",
+      "curation": "Represent same-month events as ordered pairs so Bard and LlaMA 1 are both retained, vertically stagger Bard above LlaMA 1, and normalize GPT-4v to 2023-09."
+    },
+    {
+      "path": "scripts/paper_examples/rnagenscape/plot_comparison.py",
+      "source_path": "figure_RNAGenScape/plot_comparison.py",
+      "sha256": "a5481497f5f3f89f7c4cbf3ec577a25a02f1015c3a4134e9a7906cf2c3ab553d"
+    },
+    {
+      "path": "scripts/paper_examples/rnagenscape/plot_hole_manifold.py",
+      "source_path": "figure_RNAGenScape/plot_hole_manifold.py",
+      "sha256": "7965ca632778f94dd63ae8d233a61d1a9e85d8ed2e7b63b338d652b6b2b5ff80"
+    },
+    {
+      "path": "scripts/paper_examples/rnagenscape/plot_manifold.py",
+      "source_path": "figure_RNAGenScape/plot_manifold.py",
+      "sha256": "d064c03cd3109b5332be069d6a3d88b0e6a04121966a18e8f74818d3bbf281dd"
+    },
+    {
+      "path": "scripts/paper_examples/rnagenscape/plot_sweep.py",
+      "source_path": "figure_RNAGenScape/plot_sweep.py",
+      "sha256": "5730459c850f58e2f810c38755d09f1e3322286130fc4fa0803c5f11cabfe7ad"
+    },
+    {
+      "path": "scripts/paper_examples/vigil/plot_ablation.py",
+      "source_path": "figure_VIGIL/plot_ablation.py",
+      "sha256": "ebc15741a4f8c58ca94fb694f26b6b34ea292cd8cbc000904e12f4579dd78423",
+      "upstream_sha256": "6698d883d7db2adcdc81d18ad97da3225b8fe1a82f5c87431f312c211039d42b",
+      "curation": "Remove the duplicate MathVista plot call; the single call retains linewidth 3 and removes the duplicate legend entry."
+    },
+    {
+      "path": "scripts/paper_examples/vigil/plot_comparison_radar.py",
+      "source_path": "figure_VIGIL/plot_comparison_radar.py",
+      "sha256": "2d4f16fa3f2e9e224badc728fc7483cdc7dae39f35e71ec557995a6bd2b25971"
+    },
+    {
+      "path": "scripts/paper_examples/vigil/plot_concept.py",
+      "source_path": "figure_VIGIL/plot_concept.py",
+      "sha256": "0eaf3d38c6a7957e085aa2a077e0cc2eb7c2aaaa2e96d92437c062ea125f1845"
+    },
+    {
+      "path": "scripts/paper_examples/vigil/plot_posttraining.py",
+      "source_path": "figure_VIGIL/plot_posttraining.py",
+      "sha256": "7ae5b3e278f08edfb9f6342d72873b0d4a4e58da581231179568db0772b2c8fd"
+    }
+  ]
+}

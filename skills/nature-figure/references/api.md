@@ -1,12 +1,17 @@
 # API Reference — Nature Figure Making
 
-Conventions, constants, and reusable code blocks. Implement in your script or adapt as needed.
+Conventions, constants, and reusable code blocks for new figures. Implement in
+your script or adapt as needed. When working from a registered paper example,
+its local constants and drawing order take precedence; do not replace them with
+this API merely to make examples look uniform.
 
 ---
 
 ## Constants
 
 ### PALETTE
+
+These are optional starting palettes, not a repository-wide visual mandate.
 
 ```python
 PALETTE = {

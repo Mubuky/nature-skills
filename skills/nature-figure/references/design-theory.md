@@ -4,6 +4,10 @@
 
 Use this reference for visual hierarchy, typography, color, composition, and
 export decisions. Scientific validity and the figure contract remain primary.
+The bundled paper examples intentionally span multiple visual systems; these
+principles guide judgment but do not authorize restyling them into one house
+theme. Preserve a selected example's successful visual identity unless the
+user requests redesign.
 
 ## Start from the claim
 

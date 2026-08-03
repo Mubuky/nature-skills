@@ -3,6 +3,10 @@
 # Common Patterns — Nature Figure Making
 
 Reusable layout and encoding patterns used across publication-grade scripts.
+Compose them for new work; do not collapse the faithful paper gallery into one
+shared layout or palette. When adapting a registered example, preserve its
+project-specific implementation unless an approved change passes visual
+regression.
 
 ---
 

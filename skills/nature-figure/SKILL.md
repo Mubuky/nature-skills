@@ -11,7 +11,7 @@ description: >-
   illustration.
 ---
 
-<!-- MODIFIED IN THIS DERIVATIVE: backend persistence, neutral QA, path-safe tooling, and artifact privacy were revised; see ../../NOTICE (Apache-2.0 section 4(b)). -->
+<!-- MODIFIED IN THIS DERIVATIVE: backend persistence, faithful paper-example routing, neutral QA, path-safe tooling, and artifact privacy were revised; see ../../NOTICE (Apache-2.0 section 4(b)). -->
 
 # Nature Scientific Figures
 
@@ -26,7 +26,9 @@ this order:
 1. explicit user choice;
 2. existing source file, project dependencies, or established project backend;
 3. saved user preference;
-4. ask only when Python and R are both viable and the choice would materially
+4. a faithful paper-specific Python example or maintained analytical CSV template when it
+   is a semantic match and no project constraint conflicts;
+5. ask only when Python and R are both viable and the choice would materially
    affect integration or maintainability.
 
 If the user asks you to choose, use
@@ -47,17 +49,30 @@ Before code, define:
 - likely reviewer misreadings and integrity risks.
 
 Load only the selected backend fragment and the references required by the
-archetype, chart, template adaptation, or export. Prefer the provenance-recorded
-chart-atlas/gallery examples or user code; do not copy an external paper figure.
+archetype, chart, example adaptation, or export. Prefer user code or a
+provenance-recorded high-fidelity example over a generic style preset. For a
+Python task that benefits from a real-paper precedent, load
+[references/paper-pattern-catalog.md](references/paper-pattern-catalog.md),
+inspect the original output first, then open only its registered source.
+
+When refactoring a preserved example, treat its bundled PNG/PDF as the golden
+output. Keep paper-specific palettes, typography, canvas, layout, drawing order,
+annotations, camera, and save settings local. Do not route it through the
+shared analytical-template style. Make one structural change at a time and compare the
+rerender; retain and show the original when a proposed repair changes pixels or
+scientific meaning. Store an approved changed render under `paper-patterns/optimized/`;
+never replace its upstream golden.
 
 ## Build and validate
 
 1. Choose an archetype and a clear hero panel.
 2. Map data and statistics before styling. Preserve missingness, sample sizes,
    units, and uncertainty.
-3. Use restrained hierarchy, typography, and color; verify grayscale and
-   color-vision robustness when distinctions matter.
-4. Adapt templates by semantics, never by relabelling incompatible data.
+3. Preserve the selected reference's deliberate visual hierarchy and diversity;
+   verify readability, grayscale, and color-vision robustness without silently
+   flattening its design.
+4. Adapt examples and templates by semantics, never by relabelling incompatible
+   data. Treat the five analytical CSV commands as utilities, not canonical paper style.
 5. Export the required vector/raster products under the task's output directory.
 6. Resolve `SKILL_DIR` as the directory containing this `SKILL.md`, load
    [references/qa-contract.md](references/qa-contract.md), run
@@ -67,8 +82,10 @@ chart-atlas/gallery examples or user code; do not copy an external paper figure.
 ## Integrity and completion
 
 Do not invent values, mechanisms, labels, institutional marks, or statistical
-significance. Do not hide data or alter analysis to improve appearance. Finish
-only when source and exports agree, labels and legends are readable, panel
-claims are evidence-supported, and final-size visual QA passes when a rendered
-deliverable is in scope and inspectable; otherwise state clearly that visual QA
-was not run.
+significance. Do not hide data or alter analysis to improve appearance. Do not
+delete a questionable example merely because it is hard to generalize; preserve
+it, record the issue, and request a decision before an output-changing repair.
+Finish only when source and exports agree, labels and legends are readable,
+panel claims are evidence-supported, and final-size visual QA passes when a
+rendered deliverable is in scope and inspectable; otherwise state clearly that
+visual QA was not run.

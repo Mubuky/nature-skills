@@ -50,9 +50,26 @@ License 2.0. The adopted snapshot supplied no separate per-file author or
 licence notice for them. This distribution makes no new authorship claim and
 records exact paths and SHA-256 values in skills/nature-figure/assets/README.md.
 
-INTENTIONALLY OMITTED MATERIAL
+FAITHFUL PAPER-FIGURE EXAMPLE PROVENANCE
 
-The `figures4papers` snapshot present in the adopted source repository is not
-redistributed here because no corresponding licence was identified in that
-snapshot. Public visibility, an attribution, or a repository mention alone is
-not treated as evidence of redistribution permission.
+The paper-specific Python gallery under skills/nature-figure was reorganized
+from:
+
+  Project: figures4papers
+  Repository: https://github.com/ChenLiu-1996/figures4papers
+  Source revision: 6e9ca1200f4b1445cff68a42be76f7712ec2d4e1
+
+We thank Chen Liu for making these paper-figure practices publicly available.
+The skill retains 25 Python source files, 29 upstream Python-rendered PNGs,
+three companion PDFs, and ten hybrid reference PNGs. They are reorganized into
+`scripts/paper_examples/` and `assets/paper-patterns/` rather than copying the
+source repository shell. Exact source paths, hashes, dimensions, and revision
+are recorded in `assets/paper-patterns/manifest.json`.
+
+The preserved outputs are visual golden references. Paper-specific style,
+layout, drawing order, and save settings remain local to each example. Later
+code refactoring is constrained by image comparison. Five selected source files
+were narrowly curated with user approval; their upstream and current hashes are
+both recorded, and approved derived renders remain under `optimized/` rather
+than replacing upstream goldens. Unresolved scientific-policy samples remain
+present and flagged for explicit review rather than silently removed.

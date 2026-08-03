@@ -12,7 +12,7 @@ report the missing dependency. You may still write the Python script, provide
 install commands, or ask permission to install dependencies, but do not
 cross-render the figure in R.
 
-## Python quick-start
+## Python quick-start for new figures
 
 ```python
 import matplotlib as mpl
@@ -23,7 +23,7 @@ mpl.rcParams.update({
     "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans", "sans-serif"],
     "svg.fonttype": "none",     # editable text in SVG
     "pdf.fonttype": 42,         # editable TrueType text in PDF
-    "font.size": 7,             # use 15-24 only for large slide-sized panels
+    "font.size": 7,             # journal-scale starting point; not a universal style
     "axes.spines.right": False,
     "axes.spines.top": False,
     "axes.linewidth": 0.8,
@@ -36,15 +36,21 @@ def save_pub_py(fig, filename, dpi=600):
     fig.savefig(f"{filename}.tiff", dpi=dpi, bbox_inches="tight")
 ```
 
-Use `text.usetex = True` only when LaTeX is installed and math-rich labels are required.
+Use `text.usetex = True` only when LaTeX is installed and math-rich labels are
+required. This preset is only a starting point for a new figure. Never apply it
+over a selected paper example: keep that example's original rcParams, canvas,
+layout, and save settings.
 
 ## Going deeper
 
 - `references/api.md` — Python PALETTE, helper function signatures, validation rules.
 - `references/template-catalog.md` — validated CSV-driven volcano, ROC, dot-plot, marginal, and paired templates backed by `scripts/plot_templates.py`.
+- `references/paper-pattern-catalog.md` — 8-project faithful gallery, original outputs, registered sources, dependencies, and visual-regression rules.
 - `references/common-patterns.md` — hero panels, legend-only axes, dark image plates, asymmetric layouts.
 - `references/chart-types.md` — radar, 3D sphere, fill_between, scatter patterns.
 - `references/tutorials.md` — end-to-end walkthroughs for bars, trends, heatmaps.
-- `references/demos.md` — bundled chart-atlas and gallery examples with provenance.
+- `references/demos.md` — bundled paper, chart-atlas, and gallery examples with provenance.
+- `scripts/render_paper_example.py` — isolate and rerun one preserved paper-specific source without restyling it.
+- `scripts/compare_paper_figure.py` — exact raster comparison plus optional difference and overlay diagnostics.
 - `scripts/validate_figure.py` — dependency-free source preflight before rendering and visual QA.
 <!-- Modified in the context-engineered edition; see repository NOTICE. -->

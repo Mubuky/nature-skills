@@ -1,6 +1,6 @@
-# MODIFIED IN THIS DERIVATIVE: backend persistence and neutral-QA routing were revised; see ../../NOTICE (Apache-2.0 section 4(b)).
+# MODIFIED IN THIS DERIVATIVE: backend persistence, faithful-paper-example routing, and neutral-QA routing were revised; see ../../NOTICE (Apache-2.0 section 4(b)).
 name: nature-figure
-version: 2.1.0
+version: 2.3.0
 description: >
   Declarative manifest for the static/dynamic split. SKILL.md uses this to
   decide which fragments to load for a given figure request. The main axis is
@@ -19,10 +19,12 @@ preference:
   default_config: ~/.config/nature-skills/nature-figure.json
   behavior: |
     First honor an explicit Python/R choice, then existing source files and
-    project dependencies, then the saved preference. Ask only when both
-    backends are viable and the choice materially affects integration or
-    maintainability. Save the choice only when the user explicitly asks to make
-    it the future default; otherwise keep it task-local.
+    project dependencies, then the saved preference. With no conflicting
+    project signal, prefer Python when a faithful paper example or maintained
+    analytical CSV template is a semantic match. Ask only when both backends are
+    viable and the choice materially affects integration or maintainability.
+    Save the choice only when the user explicitly asks to make it the future
+    default; otherwise keep it task-local.
 
 axes:
   backend:
@@ -30,10 +32,12 @@ axes:
       Determine the plotting backend from an explicit choice, existing source
       files and project dependencies, or the saved preference. When the user
       asks for a recommendation, use references/backend-selection.md and
-      proceed. Ask only if both backends remain viable and the choice materially
-      changes integration or maintenance. Keep drawing, layout semantics, and
-      export on one source-of-truth backend; neutral viewers and validators may
-      inspect the resulting files.
+      proceed. With no conflicting project context, select Python when a
+      faithful paper example or maintained data template matches. Ask only if both
+      backends remain viable and the choice materially changes integration or
+      maintenance. Keep drawing, layout semantics, and export on one
+      source-of-truth backend; neutral viewers and validators may inspect the
+      resulting files.
     values:
       python:  static/fragments/backend/python.md
       r:       static/fragments/backend/r.md
@@ -65,7 +69,9 @@ references:
       path: references/figure-legend-conventions.md
     - condition: "end-to-end walkthroughs: bars, trends, heatmaps"
       path: references/tutorials.md
-    - condition: "validated Python CSV templates: volcano, ROC, marker dot plot, marginal density, or paired plot"
+    - condition: "validated analytical Python CSV templates: volcano, ROC, marker dot plot, marginal density, or paired plot"
       path: references/template-catalog.md
+    - condition: "Python real-paper precedent, faithful example adaptation, or refactoring that must preserve an existing paper figure's visual output"
+      path: references/paper-pattern-catalog.md
     - condition: "radar, 3D sphere, fill_between, scatter, ablation-line, probability/manifold concept patterns"
       path: references/chart-types.md

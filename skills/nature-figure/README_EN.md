@@ -17,6 +17,10 @@ them at final publication size.
   abstracts;
 - Auditing chart choice, hierarchy, color, typography, labels, statistics, and
   export settings;
+- Selecting and faithfully adapting complete Python examples and original
+  outputs from eight real-paper project families;
+- Using the existing analytical CSV tools for volcano, ROC, marker dot-plot,
+  marginal, and paired data;
 - Producing SVG/PDF/TIFF/PNG, source-data maps, and pre-submission QA records.
 
 Use `nature-paper2ppt` for a full slide deck and `nature-statistics` for
@@ -31,9 +35,12 @@ statistical inference or reporting review.
    changes the implementation.
 3. Use one source file and backend for drawing, layout semantics, and export;
    neutral viewers and validators may inspect the outputs.
-4. Preserve all observations and requested variables by default. Record every
+4. When adapting a high-quality example, use its original output as the visual
+   regression baseline. Preserve project-specific composition, palette,
+   typography, line weight, annotations, and export settings.
+5. Preserve all observations and requested variables by default. Record every
    exclusion, aggregation, and transformation with before/after counts.
-5. Inspect typography, whitespace, alignment, color accessibility, and scaling
+6. Inspect typography, whitespace, alignment, color accessibility, and scaling
    at the target column width and final resolution.
 
 When the user explicitly requests an AI schematic, the host's image-generation
@@ -56,13 +63,18 @@ Typical outputs include:
 - Final-size visual QA and a list of unresolved items.
 
 See [SKILL.md](SKILL.md) for the execution contract. Bundled references cover
-chart choice, layout, template adaptation, backend selection, and QA;
-`scripts/validate_figure.py` provides deterministic static preflight.
+chart choice, layout, template adaptation, backend selection, and QA. The
+[faithful real-paper gallery](references/paper-pattern-catalog.md) records the
+original outputs, approved optimizations, scripts, dependencies, regression
+baselines, and unresolved review items; `scripts/validate_figure.py` provides
+deterministic static preflight.
 
 ## Boundaries
 
 - Do not invent tests, sample sizes, error-bar meanings, conditions, or data.
 - Do not silently sample, remove points, or hide adverse results.
 - Do not reduce “Nature style” to a fixed palette or decorative template.
+- Do not remove a difficult or questionable example merely because it resists
+  generalization; retain it and show the issue and candidate repair first.
 - Local private templates may be used without embedding private paths or names
   in public artifacts; chat replies may link deliverables created for the task.

@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-"""Validated Python templates for five common manuscript-figure families.
+"""Validated Python templates for five analytical manuscript-figure families.
 
 Subcommands: volcano, roc, dotplot, marginal, and paired. Production runs
-require a CSV input. Simulated data is available only through the explicit
---demo flag and is marked as such in the generated QA record.
+require CSV input. Simulated data is available only through the explicit
+``--demo`` flag and is marked as such in the generated QA record.
 
 The template families and adaptation safeguards were informed by the
 Apache-2.0 academic-figure-skill asset collection. This implementation is
-portable, path-independent, and designed for the nature-figure contract.
+portable, path-independent, and intentionally separate from the faithful
+paper-specific gallery in ``scripts/paper_examples``.
 """
 
 from __future__ import annotations
@@ -21,8 +22,6 @@ from pathlib import Path
 from typing import Any, Iterable
 
 
-DEFAULT_WIDTH_MM = 183.0
-DEFAULT_HEIGHT_MM = 120.0
 MM_PER_INCH = 25.4
 PALETTE = ["#2166AC", "#B2182B", "#1B7837", "#F1A340", "#762A83", "#666666"]
 DEPENDENCY_ERROR: Exception | None = None
@@ -47,6 +46,8 @@ def require_dependencies() -> None:
 
 
 def configure_style() -> None:
+    """Apply the compact style used only by these five analytical templates."""
+    require_dependencies()
     mpl.rcParams.update(
         {
             "font.family": "sans-serif",
@@ -78,16 +79,19 @@ def normalize_prefix(raw: Path) -> Path:
     return raw
 
 
-def save_bundle(fig: Any, output: Path) -> dict[str, str]:
+def save_bundle(fig: Any, output: Path, *, dpi: int = 600) -> dict[str, str]:
+    """Save editable vectors, a high-resolution TIFF, and an inspection PNG."""
     output = normalize_prefix(output)
     paths = {
         "svg": str(output.with_suffix(".svg")),
         "pdf": str(output.with_suffix(".pdf")),
         "tiff": str(output.with_suffix(".tiff")),
+        "png": str(output.with_suffix(".png")),
     }
     fig.savefig(paths["svg"], bbox_inches="tight", facecolor="white")
     fig.savefig(paths["pdf"], bbox_inches="tight", facecolor="white")
-    fig.savefig(paths["tiff"], dpi=600, bbox_inches="tight", facecolor="white")
+    fig.savefig(paths["tiff"], dpi=dpi, bbox_inches="tight", facecolor="white")
+    fig.savefig(paths["png"], dpi=min(dpi, 300), bbox_inches="tight", facecolor="white")
     plt.close(fig)
     return paths
 
@@ -103,8 +107,7 @@ def read_csv_rows(path: Path) -> tuple[list[dict[str, Any]], list[str]]:
         reader = csv.DictReader(handle)
         if reader.fieldnames is None:
             raise ValueError(f"CSV has no header: {path}")
-        rows = [dict(row) for row in reader]
-        return rows, list(reader.fieldnames)
+        return [dict(row) for row in reader], list(reader.fieldnames)
 
 
 def require_columns(fieldnames: Iterable[str], required: Iterable[str]) -> None:
@@ -161,15 +164,12 @@ def parse_order(raw: str | None, observed: Iterable[str], label: str) -> list[st
     if not raw:
         return observed_order
     requested = [value.strip() for value in raw.split(",") if value.strip()]
-    missing = [value for value in observed_order if value not in requested]
-    extra = [value for value in requested if value not in observed_order]
-    if missing or extra:
-        details = []
-        if missing:
-            details.append(f"missing observed {label}: {missing}")
-        if extra:
-            details.append(f"unknown {label}: {extra}")
-        raise ValueError("; ".join(details))
+    if len(requested) != len(set(requested)):
+        raise ValueError(f"{label} order contains duplicates")
+    if set(requested) != set(observed_order):
+        missing = sorted(set(observed_order) - set(requested))
+        extra = sorted(set(requested) - set(observed_order))
+        raise ValueError(f"{label} order must be complete; missing={missing}, extra={extra}")
     return requested
 
 
@@ -324,7 +324,7 @@ def plot_volcano(args: argparse.Namespace) -> tuple[dict[str, str], dict[str, An
     if args.title:
         ax.set_title(args.title)
     ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.19), ncol=3)
-    paths = save_bundle(fig, args.output)
+    paths = save_bundle(fig, args.output, dpi=args.dpi)
 
     qa = base_qa(args, "volcano", len(rows) + len(invalid))
     qa.update({"rows_plotted": len(rows), "excluded_rows": len(invalid)})
@@ -361,7 +361,7 @@ def plot_roc(args: argparse.Namespace) -> tuple[dict[str, str], dict[str, Any]]:
     if args.title:
         ax.set_title(args.title)
     ax.legend(loc="lower right")
-    paths = save_bundle(fig, args.output)
+    paths = save_bundle(fig, args.output, dpi=args.dpi)
 
     qa = base_qa(args, "roc", len(rows) + len(invalid))
     qa.update({"rows_plotted": len(rows), "excluded_rows": len(invalid)})
@@ -412,7 +412,7 @@ def plot_dotplot(args: argparse.Namespace) -> tuple[dict[str, str], dict[str, An
         ax.legend(handles, [f"{value:g}" for value in reference_values], title=args.size_label, bbox_to_anchor=(1.18, 1), loc="upper left")
     if args.title:
         ax.set_title(args.title)
-    paths = save_bundle(fig, args.output)
+    paths = save_bundle(fig, args.output, dpi=args.dpi)
 
     qa = base_qa(args, "dotplot", len(rows) + len(invalid))
     qa.update({"rows_plotted": len(rows), "excluded_rows": len(invalid)})
@@ -455,7 +455,7 @@ def plot_marginal(args: argparse.Namespace) -> tuple[dict[str, str], dict[str, A
     ax_right.set_xlabel("Density")
     if args.title:
         ax_top.set_title(args.title)
-    paths = save_bundle(fig, args.output)
+    paths = save_bundle(fig, args.output, dpi=args.dpi)
 
     qa = base_qa(args, "marginal", len(rows) + len(invalid))
     qa.update({"rows_plotted": len(rows), "excluded_rows": len(invalid)})
@@ -502,7 +502,7 @@ def plot_paired(args: argparse.Namespace) -> tuple[dict[str, str], dict[str, Any
     ax.set_ylabel(args.value_label or args.value_col)
     if args.title:
         ax.set_title(args.title)
-    paths = save_bundle(fig, args.output)
+    paths = save_bundle(fig, args.output, dpi=args.dpi)
 
     qa = base_qa(args, "paired", len(rows) + len(invalid))
     qa.update({"rows_plotted": len(complete) * 2, "excluded_rows": len(invalid), "excluded_entities": len(incomplete)})
@@ -516,9 +516,10 @@ def add_common_arguments(parser: argparse.ArgumentParser, width_mm: float, heigh
     source = parser.add_mutually_exclusive_group()
     source.add_argument("--input", type=Path, help="production CSV input")
     source.add_argument("--demo", action="store_true", help="render explicit deterministic demo data")
-    parser.add_argument("--output", type=Path, required=True, help="output prefix for SVG/PDF/TIFF/QA JSON")
+    parser.add_argument("--output", type=Path, required=True, help="output prefix for SVG/PDF/TIFF/PNG/QA JSON")
     parser.add_argument("--width-mm", type=float, default=width_mm)
     parser.add_argument("--height-mm", type=float, default=height_mm)
+    parser.add_argument("--dpi", type=int, default=600, help="TIFF resolution; production default is 600")
     parser.add_argument("--title")
     parser.add_argument("--drop-incomplete", action="store_true", help="explicitly exclude rows with missing/non-finite required values and record counts")
 
@@ -575,6 +576,7 @@ def build_parser() -> argparse.ArgumentParser:
     paired.add_argument("--condition-order", help="comma-separated two-condition order")
     paired.add_argument("--value-label")
     paired.set_defaults(plotter=plot_paired)
+
     return parser
 
 
@@ -582,6 +584,12 @@ def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
         require_dependencies()
+        if args.width_mm <= 0 or args.height_mm <= 0:
+            raise ValueError("physical figure dimensions must be positive")
+        if args.dpi < 1:
+            raise ValueError("--dpi must be positive")
+        if not args.demo and args.dpi < 300:
+            raise ValueError("production TIFF output requires --dpi of at least 300; the default is 600")
         configure_style()
         paths, qa = args.plotter(args)
         qa_path = write_qa(args.output, qa)
