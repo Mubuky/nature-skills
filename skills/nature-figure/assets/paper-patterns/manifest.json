@@ -2,6 +2,10 @@
   "source_repository": "https://github.com/ChenLiu-1996/figures4papers",
   "source_revision": "6e9ca1200f4b1445cff68a42be76f7712ec2d4e1",
   "policy": "Preserve upstream visual outputs byte-for-byte as golden references. Curated source files retain their upstream SHA-256 alongside the current SHA-256; approved optimized outputs use a separate optimized/ path.",
+  "hash_policy": {
+    "binary_assets": "SHA-256 of raw bytes",
+    "source_files": "SHA-256 after normalizing CRLF and CR line endings to LF"
+  },
   "entries": [
     {
       "path": "assets/paper-patterns/hybrid/Dispersion_motivation.png",
@@ -503,7 +507,7 @@
           "kind": "upstream-source-rerender",
           "source_revision": "6e9ca1200f4b1445cff68a42be76f7712ec2d4e1",
           "source_path": "figure_ophthal_review/plot_trend.py",
-          "source_sha256": "41232f15306ed83081ae695da341c6d78e74dcefd46b32b3f313245dde15db98",
+          "source_sha256": "0a66624628f6e1da4f2da697e86ac79d46576d4bd552f5d585b2ceff05204811",
           "render_sha256": "84e5a64ca2feb7ba3c60cc0454ab772a74dbb63b781d71bfce6f69a1397c96f1",
           "stored_in_repository": false,
           "baseline_path_role": "Preserved upstream golden for provenance only; controlled localized pixel verification uses this same-environment upstream-source rerender."
@@ -686,137 +690,137 @@
     {
       "path": "scripts/paper_examples/brainteaser/plot_brute_force.py",
       "source_path": "figure_Brainteaser/plot_brute_force.py",
-      "sha256": "99f285d252b45ca6fcc1e4458bc74df334b251f1d7b9f96168a63020f73386a0"
+      "sha256": "46906a9de2e8a069a2d3022a78087b2933e2cd898a38800242d005ceec40057f"
     },
     {
       "path": "scripts/paper_examples/brainteaser/plot_correctness_by_category.py",
       "source_path": "figure_Brainteaser/plot_correctness_by_category.py",
-      "sha256": "6b276da17edd8a715aae1e11792967cf0de118b9718ec015ac277c591b3a9eb3"
+      "sha256": "e84d87bf9cf8b7d8a184f558c02de91874215754075526aaa54586e68d931c1a"
     },
     {
       "path": "scripts/paper_examples/brainteaser/plot_correctness_by_subcategory.py",
       "source_path": "figure_Brainteaser/plot_correctness_by_subcategory.py",
-      "sha256": "4c8a8ac067ae410132bd45991916b909168355fa23e914d833568473283019eb"
+      "sha256": "fc9c20eaf00c7106b4752ad9638a6593c639721a12bfd42a748a6d439366d4af"
     },
     {
       "path": "scripts/paper_examples/brainteaser/plot_rewriting.py",
       "source_path": "figure_Brainteaser/plot_rewriting.py",
-      "sha256": "5a3e768f34d3212f80e9a08d3f22529df78346a8fceb430bc9a37bdef9efc020"
+      "sha256": "01939d1cc3807852ac4751ec143d5472193f1511381eae03bf0c01b33a367501"
     },
     {
       "path": "scripts/paper_examples/brainteaser/plot_selfcorrection_math.py",
       "source_path": "figure_Brainteaser/plot_selfcorrection_math.py",
-      "sha256": "b22f1ac50b5f4d31efe172c8a3cf4798d51cf84bbea950bb28332a4f620e73eb"
+      "sha256": "7656335018d67ecaaae362e63669f22c709e51644681dc801f298356fb7fef7c"
     },
     {
       "path": "scripts/paper_examples/cellsplicenet/plot_ablation.py",
       "source_path": "figure_CellSpliceNet/plot_ablation.py",
-      "sha256": "507d1e6c6531e335e39608c4d6191eae3cbba539459924f1de4ed457443eae0f"
+      "sha256": "0d0959102afe26249199a60fb67d5c8bd282a6fdb9c7e024c51a9c42a6a58c7f"
     },
     {
       "path": "scripts/paper_examples/cellsplicenet/plot_comparison.py",
       "source_path": "figure_CellSpliceNet/plot_comparison.py",
-      "sha256": "3def900bf87bec30174fa71119158c03ce19390191a0fbd9990388ab95edd5b8"
+      "sha256": "9061cd3476a2923e557e34585803da8e0df31a01f7cb5dd0f468b83458eeae33"
     },
     {
       "path": "scripts/paper_examples/cflows/diffusion_swiss_roll.py",
       "source_path": "figure_Cflows/diffusion_swiss_roll.py",
-      "sha256": "c36f0fcb8f51add542dcfbffadf8be7e421664fe096b6ec23cf1342248dccc6d",
-      "upstream_sha256": "5566756d073cd7ecaa9cdc5ff885ba9affd8416251f190a4cf8c0e80e6e8d51d",
+      "sha256": "875d6e73891f400749b05de52d77c67303683c1dd6db3214e260a510337bca65",
+      "upstream_sha256": "2ecd52231b6f095d8471b94bcae58d6c844f14cc8494c6c1636887711cabe592",
       "curation": "Fixed seed 42, output-directory creation, function boundary, and O(1) inverse index lookup; drawing order is unchanged."
     },
     {
       "path": "scripts/paper_examples/cflows/plot_comparison_Ablation.py",
       "source_path": "figure_Cflows/plot_comparison_Ablation.py",
-      "sha256": "4b071ac77be68def7acd8a5b1b73e5384659ae6293c39ee24c6a778173651ea8"
+      "sha256": "d5ab173adbf5be9486e8325f9904123fe7430c0c937e1eebd88dee38049cd787"
     },
     {
       "path": "scripts/paper_examples/cflows/plot_comparison_GeneRegulatory.py",
       "source_path": "figure_Cflows/plot_comparison_GeneRegulatory.py",
-      "sha256": "1f260fbb6eca33c7f20ab8ca61e5119cb78e39acebb0b364a3eaa3b914b23836"
+      "sha256": "8659356aa5b92a7969dd8e46144c4c68fe97850cb58c2da6a5b011b7daf88129"
     },
     {
       "path": "scripts/paper_examples/cflows/plot_comparison_Trajectory.py",
       "source_path": "figure_Cflows/plot_comparison_Trajectory.py",
-      "sha256": "d6a81cb5ea7c0db80b42ede01ab5c06fc61ae1993e6f7d7078b851337fca8ac9"
+      "sha256": "bc154c3e99fd4895ceefefeef81298055a8cd42e5795547e1fe1632edabe5b69"
     },
     {
       "path": "scripts/paper_examples/dispersion/plot_idea.py",
       "source_path": "figure_Dispersion/plot_idea.py",
-      "sha256": "77974b680f87fcb237f92526c4bccc031a93cdf5cc9cbe234d97a4a58cc80789"
+      "sha256": "c540a368c5a60b90fec950da8c5085d2ebfa47c367e3270fa3fb38176cf8134e"
     },
     {
       "path": "scripts/paper_examples/dispersion/plot_illustration.py",
       "source_path": "figure_Dispersion/plot_illustration.py",
-      "sha256": "6742ee93ecd484a0dbe1babe59a2cac5b050e099553d397cb2108cab4685e2e4"
+      "sha256": "7f9c451d336f718a2c4287130a45ec4597b9fad43746de314a018655c639ec98"
     },
     {
       "path": "scripts/paper_examples/immunostruct/plot_bars.py",
       "source_path": "figure_ImmunoStruct/plot_bars.py",
-      "sha256": "dbadcf5bc12575eb8dd199b69082587017deebb6daf3502710081f41f6287831",
-      "upstream_sha256": "820acbc976b88cc713908a4fa0c8f57ad63a9a05478224dcde80048c71b753ea",
+      "sha256": "1aa1c3717c9c890bcb3a68a710cca6d28a502db86f121b8982af3fd6ebba7724",
+      "upstream_sha256": "1d028144e620d1cfac66ea5ab57004dfa286d80214480c76d046d9f346fda408",
       "curation": "Consume the neutrally named uncertainty arrays without changing any plotted values."
     },
     {
       "path": "scripts/paper_examples/immunostruct/raw_data.py",
       "source_path": "figure_ImmunoStruct/raw_data.py",
-      "sha256": "af6d2136ad8bb5633f51741b36ee2d58cf11be36ac74386073cd1902c8ecfcda",
-      "upstream_sha256": "5204c9833b29883872bdfc15f5168b548b67a29e1de9bdae2f0a887be5889d62",
+      "sha256": "33891a9977c5c6d2fdabb92dc931399cb5ed8b29e9588e84d26b3b6e2af0853f",
+      "upstream_sha256": "837be4150b7419085caa84746734099ccc78e0f3fb4242e91b81ce1bde6009ca",
       "curation": "Rename std to uncertainty because the source does not establish SD or SEM; preserve every numeric value and the Mean PPVn /sqrt(5) transformation."
     },
     {
       "path": "scripts/paper_examples/ophthal_review/plot_composition.py",
       "source_path": "figure_ophthal_review/plot_composition.py",
-      "sha256": "b3d5f55eebfee6b8cfb6748e1eb0a150e926b4a4f918a960a9b9421513514aad"
+      "sha256": "8fb5469cc22f13a68a71ab462abd876856b30c93d1f616fe1bd3569da5aee427"
     },
     {
       "path": "scripts/paper_examples/ophthal_review/plot_trend.py",
       "source_path": "figure_ophthal_review/plot_trend.py",
-      "sha256": "b73d92381c15079ed04d7e826369b08cb71e7edbdcffe1d683f53b497a030db2",
-      "upstream_sha256": "41232f15306ed83081ae695da341c6d78e74dcefd46b32b3f313245dde15db98",
+      "sha256": "67b7fbc804d29cd69cbf5d3f9cbda117388571dc3287f8687b8211e4d424ec1b",
+      "upstream_sha256": "0a66624628f6e1da4f2da697e86ac79d46576d4bd552f5d585b2ceff05204811",
       "curation": "Represent same-month events as ordered pairs so Bard and LlaMA 1 are both retained, vertically stagger Bard above LlaMA 1, and normalize GPT-4v to 2023-09."
     },
     {
       "path": "scripts/paper_examples/rnagenscape/plot_comparison.py",
       "source_path": "figure_RNAGenScape/plot_comparison.py",
-      "sha256": "a5481497f5f3f89f7c4cbf3ec577a25a02f1015c3a4134e9a7906cf2c3ab553d"
+      "sha256": "b2b30a212d084ae5ba7b82aa1fd830cbfea82a4eef507edfa1757b1734b250e3"
     },
     {
       "path": "scripts/paper_examples/rnagenscape/plot_hole_manifold.py",
       "source_path": "figure_RNAGenScape/plot_hole_manifold.py",
-      "sha256": "7965ca632778f94dd63ae8d233a61d1a9e85d8ed2e7b63b338d652b6b2b5ff80"
+      "sha256": "cc31a470f0364c19f094c1ef32ada4909fb53dab638f56a552fe55d44942ded1"
     },
     {
       "path": "scripts/paper_examples/rnagenscape/plot_manifold.py",
       "source_path": "figure_RNAGenScape/plot_manifold.py",
-      "sha256": "d064c03cd3109b5332be069d6a3d88b0e6a04121966a18e8f74818d3bbf281dd"
+      "sha256": "aa6461c85b1d03b30f7e12824821c1149f1a4beb56394a20304126a592cf8021"
     },
     {
       "path": "scripts/paper_examples/rnagenscape/plot_sweep.py",
       "source_path": "figure_RNAGenScape/plot_sweep.py",
-      "sha256": "5730459c850f58e2f810c38755d09f1e3322286130fc4fa0803c5f11cabfe7ad"
+      "sha256": "123a14749450ef5895161b6823e7b8d217dbee181f39da954f5a8b2439be2961"
     },
     {
       "path": "scripts/paper_examples/vigil/plot_ablation.py",
       "source_path": "figure_VIGIL/plot_ablation.py",
-      "sha256": "ebc15741a4f8c58ca94fb694f26b6b34ea292cd8cbc000904e12f4579dd78423",
-      "upstream_sha256": "6698d883d7db2adcdc81d18ad97da3225b8fe1a82f5c87431f312c211039d42b",
+      "sha256": "d826e450243444147f5dc77f8d2a71d578a2935e1fccc3d4a370418c92d183bb",
+      "upstream_sha256": "b3c28343cfbb2f16e3e9c60735269d68098bcc7d16d5402f362354466fa272d7",
       "curation": "Remove the duplicate MathVista plot call; the single call retains linewidth 3 and removes the duplicate legend entry."
     },
     {
       "path": "scripts/paper_examples/vigil/plot_comparison_radar.py",
       "source_path": "figure_VIGIL/plot_comparison_radar.py",
-      "sha256": "2d4f16fa3f2e9e224badc728fc7483cdc7dae39f35e71ec557995a6bd2b25971"
+      "sha256": "d30da4f6a14b33eb7e3350f6f9623caf58d178c099f961270a6e1c17aaaabbee"
     },
     {
       "path": "scripts/paper_examples/vigil/plot_concept.py",
       "source_path": "figure_VIGIL/plot_concept.py",
-      "sha256": "0eaf3d38c6a7957e085aa2a077e0cc2eb7c2aaaa2e96d92437c062ea125f1845"
+      "sha256": "b494343947cb33dd076924522a1a0ed910ded2f72b311525890f0e9e6f4a6030"
     },
     {
       "path": "scripts/paper_examples/vigil/plot_posttraining.py",
       "source_path": "figure_VIGIL/plot_posttraining.py",
-      "sha256": "7ae5b3e278f08edfb9f6342d72873b0d4a4e58da581231179568db0772b2c8fd"
+      "sha256": "bb1371ace0f1742eb99019c87e18ecc44588ff063141fed5775429e0e373dc1c"
     }
   ]
 }

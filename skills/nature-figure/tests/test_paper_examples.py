@@ -16,7 +16,7 @@ SCRIPTS_DIR = SKILL_DIR / "scripts"
 sys.path.insert(0, str(SCRIPTS_DIR))
 
 from compare_paper_figure import compare_images  # noqa: E402
-from paper_examples.gallery import load_manifest, verify_gallery  # noqa: E402
+from paper_examples.gallery import load_manifest, sha256, verify_gallery  # noqa: E402
 from paper_examples.registry import EXAMPLES, get_example  # noqa: E402
 from render_paper_example import missing_requirements  # noqa: E402
 
@@ -63,6 +63,17 @@ class PaperExampleTests(unittest.TestCase):
         self.assertTrue(result["exact"])
         self.assertEqual(result["changed_pixel_fraction"], 0.0)
 
+    def test_source_hash_is_newline_stable(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            lf = root / "lf.py"
+            crlf = root / "crlf.py"
+            lf.write_bytes(b"alpha\nbeta\n")
+            crlf.write_bytes(b"alpha\r\nbeta\r\n")
+
+            self.assertNotEqual(sha256(lf), sha256(crlf))
+            self.assertEqual(sha256(lf, normalize_text=True), sha256(crlf, normalize_text=True))
+
     def test_curated_ophthal_records_localized_latex_pixel_qa(self) -> None:
         manifest = load_manifest()
         entry = next(
@@ -76,6 +87,10 @@ class PaperExampleTests(unittest.TestCase):
         reference = entry["verification"]["same_environment_reference"]
         self.assertEqual(reference["kind"], "upstream-source-rerender")
         self.assertFalse(reference["stored_in_repository"])
+        self.assertEqual(
+            reference["source_sha256"],
+            "0a66624628f6e1da4f2da697e86ac79d46576d4bd552f5d585b2ceff05204811",
+        )
         self.assertEqual(
             reference["render_sha256"],
             "84e5a64ca2feb7ba3c60cc0454ab772a74dbb63b781d71bfce6f69a1397c96f1",

@@ -13,12 +13,12 @@ SKILL_DIR = Path(__file__).resolve().parents[2]
 MANIFEST_PATH = SKILL_DIR / "assets" / "paper-patterns" / "manifest.json"
 
 
-def sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
+def sha256(path: Path, *, normalize_text: bool = False) -> str:
+    """Hash a file, optionally making text hashes independent of line endings."""
+    content = path.read_bytes()
+    if normalize_text:
+        content = content.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    return hashlib.sha256(content).hexdigest()
 
 
 def load_manifest(path: Path = MANIFEST_PATH) -> dict[str, object]:
@@ -34,6 +34,12 @@ def verify_gallery(path: Path = MANIFEST_PATH) -> list[str]:
     if not isinstance(entries, list) or not isinstance(source_files, list):
         return ["manifest must contain entries and source_files arrays"]
 
+    source_paths = {
+        entry.get("path")
+        for entry in source_files
+        if isinstance(entry, dict) and isinstance(entry.get("path"), str)
+    }
+
     for entry in [*entries, *source_files]:
         relative = entry.get("path")
         expected_hash = entry.get("sha256")
@@ -43,7 +49,7 @@ def verify_gallery(path: Path = MANIFEST_PATH) -> list[str]:
         candidate = SKILL_DIR / relative
         if not candidate.is_file():
             errors.append(f"missing preserved file: {relative}")
-        elif sha256(candidate) != expected_hash:
+        elif sha256(candidate, normalize_text=relative in source_paths) != expected_hash:
             errors.append(f"preserved file changed: {relative}")
 
     for entry in entries:
